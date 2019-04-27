@@ -1,0 +1,51 @@
+{
+  "name": "portfolio_lj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "animejs": "^3.0.1",
+    "design-system-utils": "^1.5.0",
+    "dotize": "^0.3.0",
+    "emotion": "^10.0.9",
+    "express": "^4.16.4",
+    "next": "^8.0.3",
+    "prismic-javascript": "^2.0.3",
+    "prismic-reactjs": "^0.3.2",
+    "react": "^16.8.4",
+    "react-anime": "^2.2.0",
+    "react-dom": "^16.8.4",
+    "react-medium-image-zoom": "^3.0.16",
+    "react-select": "^2.4.3",
+    "sitemap": "^2.1.0"
+  },
+  "devDependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "babel-plugin-emotion": "^10.0.9",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "next-compose-plugins": "^2.1.1",
+    "next-purgecss": "^3.0.1",
+    "postcss-custom-media": "^7.0.7",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-extend": "^1.0.5",
+    "postcss-normalize": "^7.0.1",
+    "postcss-preset-env": "^6.6.0",
+    "tailwindcss": "^0.7.4"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "dev:start": "npm run build && npm run dev",
+    "start": "next start",
+    "now-build": "next build",
+    "deploy": "npx run now"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "react-ssr"
+  ],
+  "author": "Naomi Hauret",
+  "license": "MIT"
+}

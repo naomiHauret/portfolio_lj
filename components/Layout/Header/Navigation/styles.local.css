@@ -1,0 +1,28 @@
+.withDecoration::after {
+  content: "";
+  width: 60px;
+  height: 1px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-25px);
+  @apply .pin-r;
+  @apply .absolute;
+  @apply .bg-blue;
+
+  @media (--screen-sm) {
+    transform: translateY(-50%) translateX(-15px);
+    width: 80px;
+  }
+}
+
+.links a {
+  @apply .font-500;
+  @apply .no-underline;
+}
+
+.links a span {
+  @apply .text-blue;
+}
+
+.active span {
+  @apply .font-900;
+}

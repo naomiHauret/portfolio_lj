@@ -1,0 +1,17 @@
+/*
+  font-face rules
+*/
+@import "./typo/**/*.css";
+
+/*
+  Bases
+*/
+@import "./base/**/*.css";
+
+/* Vendors */
+@import "./vendors/**/*.css";
+
+/*
+  Atomic classes
+*/
+@tailwind utilities;

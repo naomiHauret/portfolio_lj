@@ -1,0 +1,47 @@
+/* Fallback fonts */
+@font-face {
+  font-family: "system";
+  font-style: normal;
+  font-weight: 500;
+  src: local(".SFNSText-Regular"), local(".HelveticaNeueDeskInterface-Regular"), local(".LucidaGrandeUI"),
+    local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"), local("DroidSans"), local("Tahoma");
+}
+
+@font-face {
+  font-family: "system";
+  font-style: normal;
+  font-weight: bold;
+  src: local(".SFNSText-Medium"), local(".HelveticaNeueDeskInterface-MediumP4"), local(".LucidaGrandeUI"),
+    local("Segoe UI Semibold"), local("Ubuntu Medium"), local("Roboto-Medium"), local("DroidSans-Bold"),
+    local("Tahoma Bold");
+}
+
+@font-face {
+  font-family: "system";
+  font-style: normal;
+  font-weight: 900;
+  src: local(".SFNSText-Bold"), local(".HelveticaNeueDeskInterface-Bold"), local(".LucidaGrandeUI"),
+    local("Segoe UI Bold"), local("Ubuntu Bold"), local("Roboto-Bold"), local("DroidSans-Bold"), local("Tahoma Bold");
+}
+
+/* Custom fonts */
+@font-face {
+  font-family: "Objectivity";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/static/fonts/Objectivity-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/static/fonts/Objectivity-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Objectivity";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/static/fonts/Objectivity-ExtraBold.woff2") format("woff2");
+}

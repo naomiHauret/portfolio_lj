@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
+      "headers": {
+        "cache-control": "immutable"
+      }
+    },
+    {
+      "src": "/(?<lang>.+)",
+      "dest": "/?lang=$lang"
+    },
+    {
+      "src": "/(?<lang>.+)/about/(?<slug>.+)",
+      "dest": "/about?lang=$lang&slug=$slug"
+    },
+    {
+      "src": "/(?<lang>.+)/work/(?<slug>.+)",
+      "dest": "/work?lang=$lang&slug=$slug"
+    }
+  ]
+}
