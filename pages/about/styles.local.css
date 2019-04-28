@@ -1,0 +1,11 @@
+/* purgecss start ignore */
+.titleDecoration::after {
+  @apply .w-50;
+  @apply .h-2;
+  @apply .absolute;
+  @apply .bg-violet;
+  @apply .pin-b;
+  content: "";
+  left: -2px;
+}
+/* purgecss end ignore */

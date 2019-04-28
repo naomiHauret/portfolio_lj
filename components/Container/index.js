@@ -8,7 +8,7 @@ const Container = memo(
     const baseFontSize = ds.get("type.sizes.baseFontSize")
 
     return <div className={
-      `mx-auto w-full px-20 md:px-0 ${contained === true ? "sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl" : "" } ${staticStyles ? staticStyles : ''}
+      `mx-auto w-full px-20 ${contained === true ? "sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl" : "" } ${staticStyles ? staticStyles : ''}
     `.concat(' ', css({
           ...dynamicStyles,
         }))

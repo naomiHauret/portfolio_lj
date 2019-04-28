@@ -3,6 +3,13 @@ const withCSS = require('@zeit/next-css') // enable CSS + PostCSS
 const withPurgeCSS = require('next-purgecss') // enable PurgeCSS
 const withPlugins = require('next-compose-plugins')
 const defaultGetLocalIdent = require('css-loader/lib/getLocalIdent')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+
+class TailwindExtractor {
+  static extract(content) {
+    return content.match(/[A-Za-z0-9-_:/]+/g) || [];
+  }
+}
 
 const nextConfig = {
   // distDir: 'build',
@@ -12,6 +19,7 @@ const nextConfig = {
 
     config.plugins = [
       ...config.plugins,
+      new OptimizeCSSAssetsPlugin({})
     ]
 
     return config
@@ -21,28 +29,37 @@ const nextConfig = {
 module.exports = withPlugins(
   [
     [
-      withCSS({
-      cssModules: true,
-      cssLoaderOptions: {
-        importLoaders: 1,
+      withCSS(
+        withPurgeCSS({
+          purgeCss: {
+            purgeCssPaths: [
+              'pages/**/*',
+              'components/**/*'
+            ],
+            extractors: [
+              {
+                extractor: TailwindExtractor,
+                extensions: ['js', 'local.css', 'css'],
+              },
+            ],
+          },
+          cssModules: true,
+          cssLoaderOptions: {
+            importLoaders: 1,
 
-        // Allow the usage of CSS modules without rewriting our vendors classes
-        getLocalIdent: (loaderContext, localIdentName, localName, options) => {
-          const fileName = path.basename(loaderContext.resourcePath)
-          if (fileName.includes('.local.css') === true) {
-            return defaultGetLocalIdent(loaderContext, localIdentName, localName, options)
-          } else {
-            return localName
+            // Allow the usage of CSS modules without rewriting our vendors classes
+            getLocalIdent: (loaderContext, localIdentName, localName, options) => {
+              const fileName = path.basename(loaderContext.resourcePath)
+              if (fileName.includes('.local.css') === true) {
+                return defaultGetLocalIdent(loaderContext, localIdentName, localName, options)
+              } else {
+                return localName
+              }
+            }
           }
-        }
-      }
-    }, withPurgeCSS({
-    purgeCssPaths: [
-      'pages/**/*',
-      'components/**/*',
-      'translations/**/*',
-    ]
-  }))],
+        })
+      )
+      ],
   ],
   nextConfig
 )

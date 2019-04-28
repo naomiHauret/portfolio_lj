@@ -26,7 +26,7 @@ const Input = (props) => {
     <label className={`${themeSystem.display[tagType]} text-blue text-15 sm:text-25 text-left whitespace-no-wrap`} htmlFor={name}>
       {label}
       <div className={
-        `relative overflow-hidden ${styles.wrapper}`.concat(
+        `relative overflow-hidden ${tagType === 'textarea' ? "" : "w-6/12"} ${styles.wrapper}`.concat(
           ' ', css({
             marginLeft: tagType === 'input' ? '0.5ch' : 0,
             marginTop: tagType === 'textarea' ? '0.5ch' : 0,
@@ -65,7 +65,6 @@ const Input = (props) => {
               minHeight: tagType === 'textarea' ? pxTo(100, baseFontSize, "rem") : 0,
             }))
         }
-          placeholder=" "
           onChange={handleChange}
           required
           {...inputProps}

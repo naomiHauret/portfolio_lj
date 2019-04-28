@@ -75,6 +75,7 @@ const FormContact = memo(
                 minLength="3"
                 maxLength="50"
                 size="50"
+                placeholder=" "
               />
             </div>
             <div className="mb-60 md:mb-40">
@@ -93,7 +94,6 @@ const FormContact = memo(
                 minLength="5"
                 size="45"
                 placeholder="        @"
-                mask="99-99-9999" defaultValue="25-04-2019"
                 pattern="[^@\s]+@[^@\s]+"
                 />
             </div>
@@ -109,6 +109,7 @@ const FormContact = memo(
                 tagType="textarea"
                 minLength="5"
                 maxLength="250"
+                placeholder=" "
               />
             </div>
           </fieldset>

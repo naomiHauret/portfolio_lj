@@ -105,7 +105,7 @@ class Home extends PureComponent {
             }
             <li>
                 <aside className="sm:ml-20 ">
-                  <h2 className="mt-30 mb-20 sm:mt-20 text-20 text-blue font-bold">
+                  <h2 className={`mt-30 mb-20 sm:mt-20 text-20 text-blue font-bold relative ${styles.subTitleDecoration}`}>
                     <Translate id='pages.home.seeMore' />
                   </h2>
                   <section className={`font-500 text-gray leading-30 text-14`}>

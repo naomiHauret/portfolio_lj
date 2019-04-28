@@ -1,6 +1,8 @@
+/* purgecss start ignore */
 .wrapper {
   all: unset;
   @apply .block;
   @apply .text-center;
   @apply .overflow-hidden;
 }
+/* purgecss end ignore */

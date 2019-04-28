@@ -12,7 +12,6 @@ const Navigation =  (props) => {
       <ul className={`list-reset ${styles.links} flex items-center`}>
         <li className={`w-150 relative ${styles.withDecoration}`}>
           <Link
-            prefetch
             as={`/${locale}`}
             href={`/?lang=${locale}`}
             passHref
@@ -26,7 +25,6 @@ const Navigation =  (props) => {
         </li>
         <li className="sm:mt-0 mr-20 sm:mr-30">
           <Link
-            prefetch
             activeClassName={`${styles.active}`}
             as={`/${locale}#work`}
             href={`/?lang=${locale}#work`}

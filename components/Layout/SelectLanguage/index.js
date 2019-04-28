@@ -30,6 +30,12 @@ class SelectLanguage extends PureComponent {
         as = `/${newLocale}`
       break
 
+      case '/':
+        href = `/?lang=${newLocale}`
+        as = `/${newLocale}`
+      break
+
+
       case '/about':
         href = `/about?lang=${newLocale}`
         as = `/${newLocale}/about`
@@ -42,8 +48,8 @@ class SelectLanguage extends PureComponent {
 
       default:
       break
-
     }
+
     Router.push(href, as, {
       shallow: true
     })
@@ -56,8 +62,14 @@ class SelectLanguage extends PureComponent {
     const newLocale = locale === 'en' ? 'fr' : 'en'
     let href
     let as
+
     switch (router.route) {
       case '/index':
+        href = `/?lang=${newLocale}`
+        as = `/${newLocale}`
+        break
+
+      case '/':
         href = `/?lang=${newLocale}`
         as = `/${newLocale}`
         break
@@ -74,7 +86,6 @@ class SelectLanguage extends PureComponent {
 
       default:
         break
-
     }
     const customStyles = {
       container: (base, state) => ({
@@ -129,6 +140,7 @@ class SelectLanguage extends PureComponent {
       <Fragment>
         <div className="hidden sm:block">
           <Select
+            instanceId="selectLang"
             value={selectedOption}
             onChange={this._handleChange}
             options={Object.values(options)}
@@ -137,7 +149,6 @@ class SelectLanguage extends PureComponent {
         </div>
         <div className="text-center text-12 mb-30 mt-20 sm:my-0 sm:hidden">
           <Link
-            prefetch
             as={as}
             href={href}
             passHref

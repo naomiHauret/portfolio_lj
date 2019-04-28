@@ -17,9 +17,11 @@ export default class MyApp extends App {
   }
 
   componentDidMount() {
+    /*
     Router.onRouteChangeComplete = url => {
-      trackPageView(url)
+      //trackPageView(url)
     }
+    */
   }
 
   render() {

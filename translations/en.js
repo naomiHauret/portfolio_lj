@@ -22,13 +22,13 @@ export default {
   footer: {
     designBy: `
       Design with <span aria-hidden="true">%emoji%</span>
-      <span className="hidden">skills</span>
-      by <strong className="font-500">%name%</strong>
+      <span class="hidden">skills</span>
+      by <strong class="font-500">%name%</strong>
     `,
     codeBy: `
       Greatly developed with <span aria-hidden="true">%emoji%</span>
-      <span className="hidden">love</span>
-      by <strong className="font-500">
+      <span class="hidden">love</span>
+      by <strong class="font-500">
         <a title="Check %name%'s Github" href="https://github.com/naomihauret">%name%</a>
       </strong>
     `,
@@ -39,6 +39,13 @@ export default {
       goToProject: 'Go to project %name%',
     },
     work: {
+      projectDuration: '<span class="font-bold">Project duration:</span> %duration%',
+      projectType: {
+        personal: 'Personal project',
+        professional: 'Professional project',
+        school: 'School project',
+        freelance: 'Freelance'
+      },
       seeMore: {
         title: 'Want to see more ?',
         paragraph: 'You can check <a href="%workUrl%">my projects</a> or you can learn <a href="%aboutUrl%">about me</a>.'

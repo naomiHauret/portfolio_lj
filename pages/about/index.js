@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Layout from 'components/Layout'
 import { Client, linkResolver } from 'utils/prismic'
 import { RichText } from 'prismic-reactjs'
+import styles from './styles.local.css'
 
 class About extends PureComponent {
   static async getInitialProps({ req }) {
@@ -37,7 +38,7 @@ class About extends PureComponent {
   _renderSection = (content, availablesLocales, locale, dataId, galleryId) => {
     return <section className="mt-50 md:mt-70 flex flex-col md:flex-row">
       <div className="w-full md:w-4/12 text-gray ">
-        <h2 className="mb-20 md:mb-40 text-blue text-20 md:text-25 leading-32 font-bold">{content[`${dataId}-title-${availablesLocales[locale]}`]}</h2>
+        <h2 className={`mb-20 md:mb-40 text-blue text-20 md:text-25 leading-32 font-bold relative ${styles.titleDecoration}`}>{content[`${dataId}-title-${availablesLocales[locale]}`]}</h2>
         <div className="leading-23  text-15 md:text-base">
           {RichText.render(content[`${dataId}-paragraph-${availablesLocales[locale]}`], linkResolver)}
         </div>
@@ -48,7 +49,7 @@ class About extends PureComponent {
           key={key}
         >
           {picture[`${galleryId}-logo`] !== undefined && <img className="w-full h-full max-w-145 object-contain" src={picture[`${galleryId}-logo`].url} />}
-          {picture[`${galleryId}-link`] !== undefined && <a className="hover:cursor-ne-resize absolute pin-t opacity-0 block w-full h-full" href={picture[`${galleryId}-link`].url}>{picture[`${galleryId}-link`].url}</a>}
+          {picture[`${galleryId}-link`] !== undefined && <a className="md:hover:cursor-pointer absolute pin-t opacity-0 block w-full h-full" href={picture[`${galleryId}-link`].url}>{picture[`${galleryId}-link`].url}</a>}
         </li>)}
       </ul>
     </section>

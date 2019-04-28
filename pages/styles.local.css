@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 .headingDecoration em {
   @apply .text-violet;
   @apply .underline;
@@ -27,3 +28,14 @@
     --gap: 35px;
   }
 }
+
+.subTitleDecoration::after {
+  @apply .w-80;
+  @apply .h-2;
+  @apply .absolute;
+  @apply .bg-blue;
+  content: "";
+  left: -6px;
+  bottom: -5px;
+}
+/* purgecss end ignore */
