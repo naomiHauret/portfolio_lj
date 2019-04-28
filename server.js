@@ -9,6 +9,13 @@ app
   .prepare()
   .then(() => {
     const server = express()
+
+    server.get('/', (req, res) => {
+      const nextJsPage = '/index'
+      const queryParams = { lang: 'en' }
+      app.render(req, res, nextJsPage, queryParams)
+    })
+
     server.get('/:lang', (req, res) => {
       const nextJsPage = '/index'
       const queryParams = { lang: req.params.lang }
@@ -25,10 +32,6 @@ app
       const nextJsPage = '/work'
       const queryParams = { slug: req.params.slug, lang: req.params.lang }
       app.render(req, res, nextJsPage, queryParams)
-    })
-
-    server.get('/', (req, res) => {
-      res.redirect(301, '/en')
     })
 
     server.get('/about', (req, res) => {
