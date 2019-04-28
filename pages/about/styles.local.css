@@ -1,4 +1,4 @@
-/* purgecss start ignore */
+/*! /* purgecss start ignore */
 .titleDecoration::after {
   @apply .w-50;
   @apply .h-2;
@@ -8,4 +8,4 @@
   content: "";
   left: -2px;
 }
-/* purgecss end ignore */
+/*! /* purgecss end ignore */

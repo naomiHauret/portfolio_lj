@@ -1,4 +1,4 @@
-/* purgecss start ignore */
+/*! /* purgecss start ignore */
 .headingDecoration em {
   @apply .text-violet;
   @apply .underline;
@@ -38,4 +38,4 @@
   left: -6px;
   bottom: -5px;
 }
-/* purgecss end ignore */
+/*! /* purgecss end ignore */

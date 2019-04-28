@@ -1,4 +1,4 @@
-/* purgecss start ignore */
+/*! /* purgecss start ignore */
 .withDecoration::after {
   content: "";
   width: 60px;
@@ -27,4 +27,4 @@
 .active span {
   @apply .font-900;
 }
-/* end start ignore */
+/*! /* end start ignore */

@@ -3,7 +3,6 @@ const withCSS = require("@zeit/next-css") // enable CSS + PostCSS
 const withPurgeCSS = require("next-purgecss") // enable PurgeCSS
 const withPlugins = require("next-compose-plugins")
 const defaultGetLocalIdent = require("css-loader/lib/getLocalIdent")
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 
 class TailwindExtractor {
   static extract(content) {
@@ -12,12 +11,11 @@ class TailwindExtractor {
 }
 
 const nextConfig = {
-  // distDir: 'build',
   target: "serverless",
   webpack: (config, options) => {
     config.plugins = config.plugins || []
 
-    config.plugins = [...config.plugins, new OptimizeCSSAssetsPlugin({})]
+    config.plugins = [...config.plugins]
 
     return config
   },
