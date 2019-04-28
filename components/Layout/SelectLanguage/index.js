@@ -1,85 +1,84 @@
-import { PureComponent, Fragment } from 'react'
-import Select from 'react-select'
-import { pxTo } from 'design-system-utils'
-import { ds } from 'styles/tokens'
-import Router, { withRouter } from 'next/router'
-import Link from 'components/Layout/Header/Navigation/Link'
-import Translate from 'components/Translate'
+import { PureComponent, Fragment } from "react"
+import Select from "react-select"
+import { pxTo } from "design-system-utils"
+import { ds } from "styles/tokens"
+import Router, { withRouter } from "next/router"
+import Link from "components/Layout/Header/Navigation/Link"
+import Translate from "components/Translate"
 
 const baseFontSize = ds.get("type.sizes.baseFontSize")
 const options = {
-  en: { value: "en", label: 'English' },
-  fr: { value: "fr", label: 'Français' },
+  en: { value: "en", label: "English" },
+  fr: { value: "fr", label: "Français" },
 }
 
 class SelectLanguage extends PureComponent {
   state = {
-    selectedOption: options[this.props.router.query.lang ? this.props.router.query.lang : 'en'],
+    selectedOption: options[this.props.router.query.lang ? this.props.router.query.lang : "en"],
   }
 
   _handleChange = (selectedOption) => {
     const { onChange, router } = this.props
     const newLocale = selectedOption.value
     this.setState({ selectedOption })
-    onChange({locale: newLocale, fallback: 'en'})
+    onChange({ locale: newLocale, fallback: "en" })
     let href
     let as
-    switch(router.route) {
-      case '/index':
+    switch (router.route) {
+      case "/index":
         href = `/?lang=${newLocale}`
         as = `/${newLocale}`
-      break
+        break
 
-      case '/':
+      case "/":
         href = `/?lang=${newLocale}`
         as = `/${newLocale}`
-      break
+        break
 
-
-      case '/about':
+      case "/about":
         href = `/about?lang=${newLocale}`
         as = `/${newLocale}/about`
-      break
+        break
 
-      case '/work':
+      case "/work":
         href = `/work?lang=${newLocale}&slug=${router.query.slug}`
         as = `/${newLocale}/work/${router.query.slug}`
-      break
+        break
 
       default:
-      break
+        break
     }
 
     Router.push(href, as, {
-      shallow: true
+      shallow: true,
     })
   }
 
   render() {
     const { selectedOption } = this.state
     const { router } = this.props
-    const locale = router.query.lang ? router.query.lang : 'en'
-    const newLocale = locale === 'en' ? 'fr' : 'en'
+    const locale = router.query.lang ? router.query.lang : "en"
+    const newLocale = locale === "en" ? "fr" : "en"
     let href
     let as
 
     switch (router.route) {
-      case '/index':
+      case "/index":
         href = `/?lang=${newLocale}`
         as = `/${newLocale}`
         break
 
-      case '/':
+      case "/":
         href = `/?lang=${newLocale}`
         as = `/${newLocale}`
         break
 
-      case '/about':
+      case "/about":
         href = `/about?lang=${newLocale}`
         as = `/${newLocale}/about`
         break
 
-      case '/work':
+      case "/work":
         href = `/work?lang=${newLocale}&slug=${router.query.slug}`
         as = `/${newLocale}/work/${router.query.slug}`
         break
@@ -90,20 +89,19 @@ class SelectLanguage extends PureComponent {
     const customStyles = {
       container: (base, state) => ({
         ...base,
-        cursor: 'pointer',
+        cursor: "pointer",
         border: 0,
         outline: 0,
-        fontSize: pxTo(ds.get('type.sizes.12'), baseFontSize, "rem"),
+        fontSize: pxTo(ds.get("type.sizes.12"), baseFontSize, "rem"),
       }),
       control: (base, state) => ({
-          ...base,
+        ...base,
         border: state.menuIsOpen ? pxTo(1, baseFontSize, "rem") : 0,
         outline: 0,
-        boxShadow: 'none',
-      })
-      ,
+        boxShadow: "none",
+      }),
       indicatorSeparator: (base, state) => ({
-        background: 'transparent',
+        background: "transparent",
       }),
       dropdownIndicator: (base, state) => ({
         ...base,
@@ -115,25 +113,25 @@ class SelectLanguage extends PureComponent {
       }),
       singleValue: (base, state) => ({
         ...base,
-        position: 'relative',
-        transform: 'unset',
-        color: ds.get('colors.gray')
+        position: "relative",
+        transform: "unset",
+        color: ds.get("colors.gray"),
       }),
       option: (base, state) => ({
         ...base,
         border: 0,
         outline: 0,
-        backgroundColor: ds.get('colors.white'),
-        color: ds.get('colors.gray'),
-        fontWeight: state.isSelected ? "bold" : "100"
+        backgroundColor: ds.get("colors.white"),
+        color: ds.get("colors.gray"),
+        fontWeight: state.isSelected ? "bold" : "100",
       }),
       menu: (base, state) => ({
         boxShadow: `0 ${pxTo(2, baseFontSize, "rem")} ${pxTo(4, baseFontSize, "rem")} 0 rgba(0,0,0,0.2)`,
-        border: `${ds.get('colors.grayDark')} solid ${pxTo(1, baseFontSize, "rem")}`,
+        border: `${ds.get("colors.grayDark")} solid ${pxTo(1, baseFontSize, "rem")}`,
         zIndex: 5,
-        position: 'absolute',
+        position: "absolute",
         top: 0,
-      })
+      }),
     }
     const goToWebsiteLabel = `goToWebsite.${newLocale}`
     return (
@@ -148,11 +146,7 @@ class SelectLanguage extends PureComponent {
           />
         </div>
         <div className="text-center text-12 mb-30 mt-20 sm:my-0 sm:hidden">
-          <Link
-            as={as}
-            href={href}
-            passHref
-          >
+          <Link as={as} href={href} passHref>
             <a>
               <Translate id={goToWebsiteLabel} />
             </a>

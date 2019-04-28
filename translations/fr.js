@@ -1,23 +1,23 @@
 export default {
   formContact: {
-    legend: 'Et si on discutait ?',
+    legend: "Et si on discutait ?",
     fields: {
-      name: 'Je m\'appelle',
-      mail: 'tu peux me contacter à',
-      message: 'j\'aimerais parler de'
+      name: "Je m'appelle",
+      mail: "tu peux me contacter à",
+      message: "j'aimerais parler de",
     },
     submit: "Envoyer",
   },
   socials: {
-    goTo: 'Voir mon %label%'
+    goTo: "Voir mon %label%",
   },
   goToWebsite: {
-    fr: 'Consulter le site en français',
-    en: 'Go to website in english',
+    fr: "Consulter le site en français",
+    en: "Go to website in english",
   },
   nav: {
-    work: 'Travaux',
-    about: 'À propos',
+    work: "Travaux",
+    about: "À propos",
   },
   footer: {
     designBy: `
@@ -35,21 +35,22 @@ export default {
   },
   pages: {
     home: {
-      seeMore: 'Envie d\'en voir plus ?',
-      goToProject: 'Voir le projet %name%',
+      seeMore: "Envie d'en voir plus ?",
+      goToProject: "Voir le projet %name%",
     },
     work: {
       projectDuration: '<span class="font-bold">Durée du projet:</span> %duration%',
       projectType: {
-        personal: 'Projet personnel',
-        professional: 'Projet professionnel',
-        school: 'Projet d\'école',
-        freelance: 'Freelance'
+        personal: "Projet personnel",
+        professional: "Projet professionnel",
+        school: "Projet d'école",
+        freelance: "Freelance",
       },
       seeMore: {
-        title: 'Envie d\'en voir plus ?',
-        paragraph: 'Vous pouvez <a href="%workUrl%">jeter un oeil à mon travail</a> ou en <a href="%aboutUrl%">apprendre plus sur moi</a>.'
+        title: "Envie d'en voir plus ?",
+        paragraph:
+          'Vous pouvez <a href="%workUrl%">jeter un oeil à mon travail</a> ou en <a href="%aboutUrl%">apprendre plus sur moi</a>.',
       },
-    }
-  }
+    },
+  },
 }

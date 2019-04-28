@@ -1,24 +1,23 @@
-const pxTo = require('design-system-utils').pxTo
-const ds = require('./styles/tokens/index.js').ds
-const colors = require('./styles/tokens/index.js').colorPalette
-const fontFamilies = require('./styles/tokens/index.js').fontFamilies
-const fontWeights = require('./styles/tokens/index.js').fontWeights
-const fontSizes = require('./styles/tokens/index.js').fontSizes
-const shadows = ds.get('shadows')
+const pxTo = require("design-system-utils").pxTo
+const ds = require("./styles/tokens/index.js").ds
+const colors = require("./styles/tokens/index.js").colorPalette
+const fontFamilies = require("./styles/tokens/index.js").fontFamilies
+const fontWeights = require("./styles/tokens/index.js").fontWeights
+const fontSizes = require("./styles/tokens/index.js").fontSizes
+const shadows = ds.get("shadows")
 
-
-const baseFontSize = ds.get('type.baseFontSize')
-const columns = ds.get('grid.columns.number')
+const baseFontSize = ds.get("type.baseFontSize")
+const columns = ds.get("grid.columns.number")
 const widths = {}
 const paddings = {}
 const margins = {}
 for (let index = 1; index < columns + 1; index++) {
-  widths[`${index}/${columns}`] = `${index / columns * 100}%`
-  paddings[`${index}/${columns}`] = `${index / columns * 100}%`
-  margins[`${index}/${columns}`] = `${index / columns * 100}%`
+  widths[`${index}/${columns}`] = `${(index / columns) * 100}%`
+  paddings[`${index}/${columns}`] = `${(index / columns) * 100}%`
+  margins[`${index}/${columns}`] = `${(index / columns) * 100}%`
 }
 const fsizes = {}
-Object.keys(fontSizes).map(size => fsizes[size] = pxTo(ds.get(`type.sizes.${size}`), baseFontSize, 'rem'))
+Object.keys(fontSizes).map((size) => (fsizes[size] = pxTo(ds.get(`type.sizes.${size}`), baseFontSize, "rem")))
 
 /*
 Tailwind - The Utility-First CSS Framework
@@ -31,15 +30,14 @@ View the full documentation at https://tailwindcss.com.
 |-------------------------------------------------------------------------------
 */
 
-
 module.exports = {
   customMedia: {
-    '--screen-sm-below': `(max-width: ${pxTo((ds.get('breakpoints.sm') - 1), baseFontSize, 'rem')})`,
-    '--screen-mobile': `(max-width: ${pxTo((ds.get('breakpoints.md') - 1), baseFontSize, 'rem')})`,
-    '--screen-sm': `(min-width: ${pxTo(ds.get('breakpoints.sm'), baseFontSize, 'rem')})`,
-    '--screen-md': `(min-width: ${pxTo(ds.get('breakpoints.md'), baseFontSize, 'rem')})`,
-    '--screen-lg': `(min-width: ${pxTo(ds.get('breakpoints.lg'), baseFontSize, 'rem')})`,
-    '--screen-xl': `(min-width: ${pxTo(ds.get('breakpoints.xl'), baseFontSize, 'rem')})`
+    "--screen-sm-below": `(max-width: ${pxTo(ds.get("breakpoints.sm") - 1, baseFontSize, "rem")})`,
+    "--screen-mobile": `(max-width: ${pxTo(ds.get("breakpoints.md") - 1, baseFontSize, "rem")})`,
+    "--screen-sm": `(min-width: ${pxTo(ds.get("breakpoints.sm"), baseFontSize, "rem")})`,
+    "--screen-md": `(min-width: ${pxTo(ds.get("breakpoints.md"), baseFontSize, "rem")})`,
+    "--screen-lg": `(min-width: ${pxTo(ds.get("breakpoints.lg"), baseFontSize, "rem")})`,
+    "--screen-xl": `(min-width: ${pxTo(ds.get("breakpoints.xl"), baseFontSize, "rem")})`,
   },
 
   /*
@@ -59,10 +57,10 @@ module.exports = {
 
   screens: {
     xs: 0,
-    sm: pxTo(ds.get('breakpoints.sm'), baseFontSize, 'rem'),
-    md: pxTo(ds.get('breakpoints.md'), baseFontSize, 'rem'),
-    lg: pxTo(ds.get('breakpoints.lg'), baseFontSize, 'rem'),
-    xl: pxTo(ds.get('breakpoints.lg'), baseFontSize, 'rem'),
+    sm: pxTo(ds.get("breakpoints.sm"), baseFontSize, "rem"),
+    md: pxTo(ds.get("breakpoints.md"), baseFontSize, "rem"),
+    lg: pxTo(ds.get("breakpoints.lg"), baseFontSize, "rem"),
+    xl: pxTo(ds.get("breakpoints.lg"), baseFontSize, "rem"),
   },
 
   /*
@@ -73,8 +71,8 @@ module.exports = {
   */
 
   fonts: {
-    unset: ['unset'],
-    'family-inherit': ['inherit'],
+    unset: ["unset"],
+    "family-inherit": ["inherit"],
     base: fontFamilies.base.split(),
   },
 
@@ -86,8 +84,8 @@ module.exports = {
   */
 
   textSizes: {
-    inherit: 'inherit',
-    px: `${ds.get('type.sizes.base')}px`, // 16px
+    inherit: "inherit",
+    px: `${ds.get("type.sizes.base")}px`, // 16px
 
     // rem conversion
     ...fsizes,
@@ -112,13 +110,13 @@ module.exports = {
   */
 
   leading: {
-    13: pxTo(13, baseFontSize, 'rem'),
-    20: pxTo(20, baseFontSize, 'rem'),
-    23: pxTo(23, baseFontSize, 'rem'),
-    30: pxTo(30, baseFontSize, 'rem'),
-    32: pxTo(32, baseFontSize, 'rem'),
-    40: pxTo(40, baseFontSize, 'rem'),
-    50: pxTo(50, baseFontSize, 'rem'),
+    13: pxTo(13, baseFontSize, "rem"),
+    20: pxTo(20, baseFontSize, "rem"),
+    23: pxTo(23, baseFontSize, "rem"),
+    30: pxTo(30, baseFontSize, "rem"),
+    32: pxTo(32, baseFontSize, "rem"),
+    40: pxTo(40, baseFontSize, "rem"),
+    50: pxTo(50, baseFontSize, "rem"),
   },
 
   /*
@@ -130,7 +128,7 @@ module.exports = {
 
   tracking: {
     0: 0,
-    default: pxTo(0.73, baseFontSize, 'rem'),
+    default: pxTo(0.73, baseFontSize, "rem"),
   },
 
   /*
@@ -158,7 +156,7 @@ module.exports = {
   | Class name: .bg-{size}
   */
 
-  backgroundSize: { },
+  backgroundSize: {},
 
   /*
   |-----------------------------------------------------------------------------
@@ -168,8 +166,8 @@ module.exports = {
   */
 
   borderWidths: {
-    0: '0',
-    ...ds.get('borderWidths'),
+    0: "0",
+    ...ds.get("borderWidths"),
   },
 
   /*
@@ -180,7 +178,7 @@ module.exports = {
   */
 
   borderColors: {
-    ...colors
+    ...colors,
   },
 
   /*
@@ -191,8 +189,8 @@ module.exports = {
   */
 
   borderRadius: {
-    none: '0',
-    full: '9999px',
+    none: "0",
+    full: "9999px",
   },
 
   /*
@@ -203,20 +201,20 @@ module.exports = {
   */
 
   width: {
-    auto: 'auto',
-    0: '0',
-    1: pxTo(1, baseFontSize, 'rem'),
-    5: pxTo(5, baseFontSize, 'rem'),
-    10: pxTo(10, baseFontSize, 'rem'),
-    12: pxTo(12, baseFontSize, 'rem'),
-    15: pxTo(15, baseFontSize, 'rem'),
-    30: pxTo(30, baseFontSize, 'rem'),
-    40: pxTo(40, baseFontSize, 'rem'),
-    50: pxTo(50, baseFontSize, 'rem'),
-    80: pxTo(80, baseFontSize, 'rem'),
-    150: pxTo(150, baseFontSize, 'rem'),
-    screen: '100vw',
-    full: '100%',
+    auto: "auto",
+    0: "0",
+    1: pxTo(1, baseFontSize, "rem"),
+    5: pxTo(5, baseFontSize, "rem"),
+    10: pxTo(10, baseFontSize, "rem"),
+    12: pxTo(12, baseFontSize, "rem"),
+    15: pxTo(15, baseFontSize, "rem"),
+    30: pxTo(30, baseFontSize, "rem"),
+    40: pxTo(40, baseFontSize, "rem"),
+    50: pxTo(50, baseFontSize, "rem"),
+    80: pxTo(80, baseFontSize, "rem"),
+    150: pxTo(150, baseFontSize, "rem"),
+    screen: "100vw",
+    full: "100%",
     ...widths,
   },
 
@@ -228,14 +226,14 @@ module.exports = {
   */
 
   height: {
-    0: '0',
-    1: pxTo(1, baseFontSize, 'rem'),
-    2: pxTo(2, baseFontSize, 'rem'),
-    30: pxTo(30, baseFontSize, 'rem'),
-    170: pxTo(170, baseFontSize, 'rem'),
-    200: pxTo(200, baseFontSize, 'rem'),
-    full: '100%',
-    screen: '100vh'
+    0: "0",
+    1: pxTo(1, baseFontSize, "rem"),
+    2: pxTo(2, baseFontSize, "rem"),
+    30: pxTo(30, baseFontSize, "rem"),
+    170: pxTo(170, baseFontSize, "rem"),
+    200: pxTo(200, baseFontSize, "rem"),
+    full: "100%",
+    screen: "100vh",
   },
 
   /*
@@ -246,8 +244,8 @@ module.exports = {
   */
 
   minWidth: {
-    0: '0',
-    full: '100%',
+    0: "0",
+    full: "100%",
     ...widths,
   },
 
@@ -259,9 +257,9 @@ module.exports = {
   */
 
   minHeight: {
-    0: '0',
-    full: '100%',
-    screen: '100vh'
+    0: "0",
+    full: "100%",
+    screen: "100vh",
   },
 
   /*
@@ -272,15 +270,15 @@ module.exports = {
   */
 
   maxWidth: {
-    0: '0',
-    145: pxTo(145, baseFontSize, 'rem'),
-    300: pxTo(300, baseFontSize, 'rem'),
-    600: pxTo(600, baseFontSize, 'rem'),
+    0: "0",
+    145: pxTo(145, baseFontSize, "rem"),
+    300: pxTo(300, baseFontSize, "rem"),
+    600: pxTo(600, baseFontSize, "rem"),
     sm: pxTo(ds.get("grid.width.sm"), baseFontSize, "rem"),
     md: pxTo(ds.get("grid.width.md"), baseFontSize, "rem"),
     lg: pxTo(ds.get("grid.width.lg"), baseFontSize, "rem"),
     xl: pxTo(ds.get("grid.width.xl"), baseFontSize, "rem"),
-    full: '100%',
+    full: "100%",
     ...widths,
   },
 
@@ -292,9 +290,9 @@ module.exports = {
   */
 
   maxHeight: {
-    0: '0',
-    full: '100%',
-    screen: '100vh',
+    0: "0",
+    full: "100%",
+    screen: "100vh",
   },
 
   /*
@@ -305,27 +303,26 @@ module.exports = {
   */
 
   padding: {
-    unset: 'unset',
-    0: '0',
-    2: pxTo(2, baseFontSize, 'rem'),
-    5: pxTo(5, baseFontSize, 'rem'),
-    10: pxTo(10, baseFontSize, 'rem'),
-    15: pxTo(15, baseFontSize, 'rem'),
-    20: pxTo(20, baseFontSize, 'rem'),
-    25: pxTo(25, baseFontSize, 'rem'),
-    30: pxTo(30, baseFontSize, 'rem'),
-    40: pxTo(40, baseFontSize, 'rem'),
-    50: pxTo(50, baseFontSize, 'rem'),
-    60: pxTo(60, baseFontSize, 'rem'),
-    70: pxTo(70, baseFontSize, 'rem'),
-    80: pxTo(80, baseFontSize, 'rem'),
-    90: pxTo(90, baseFontSize, 'rem'),
-    100: pxTo(100, baseFontSize, 'rem'),
-    120: pxTo(120, baseFontSize, 'rem'),
-    200: pxTo(200, baseFontSize, 'rem'),
-    250: pxTo(250, baseFontSize, 'rem'),
+    unset: "unset",
+    0: "0",
+    2: pxTo(2, baseFontSize, "rem"),
+    5: pxTo(5, baseFontSize, "rem"),
+    10: pxTo(10, baseFontSize, "rem"),
+    15: pxTo(15, baseFontSize, "rem"),
+    20: pxTo(20, baseFontSize, "rem"),
+    25: pxTo(25, baseFontSize, "rem"),
+    30: pxTo(30, baseFontSize, "rem"),
+    40: pxTo(40, baseFontSize, "rem"),
+    50: pxTo(50, baseFontSize, "rem"),
+    60: pxTo(60, baseFontSize, "rem"),
+    70: pxTo(70, baseFontSize, "rem"),
+    80: pxTo(80, baseFontSize, "rem"),
+    90: pxTo(90, baseFontSize, "rem"),
+    100: pxTo(100, baseFontSize, "rem"),
+    120: pxTo(120, baseFontSize, "rem"),
+    200: pxTo(200, baseFontSize, "rem"),
+    250: pxTo(250, baseFontSize, "rem"),
     ...paddings,
-
   },
 
   /*
@@ -336,28 +333,28 @@ module.exports = {
   */
 
   margin: {
-    unset: 'unset',
-    auto: 'auto',
-    0: '0',
-    2: pxTo(2, baseFontSize, 'rem'),
-    5: pxTo(5, baseFontSize, 'rem'),
-    10: pxTo(10, baseFontSize, 'rem'),
-    15: pxTo(15, baseFontSize, 'rem'),
-    20: pxTo(20, baseFontSize, 'rem'),
-    25: pxTo(25, baseFontSize, 'rem'),
-    30: pxTo(30, baseFontSize, 'rem'),
-    35: pxTo(35, baseFontSize, 'rem'),
-    40: pxTo(40, baseFontSize, 'rem'),
-    50: pxTo(50, baseFontSize, 'rem'),
-    60: pxTo(60, baseFontSize, 'rem'),
-    70: pxTo(70, baseFontSize, 'rem'),
-    75: pxTo(75, baseFontSize, 'rem'),
-    80: pxTo(80, baseFontSize, 'rem'),
-    90: pxTo(90, baseFontSize, 'rem'),
-    100: pxTo(100, baseFontSize, 'rem'),
-    120: pxTo(120, baseFontSize, 'rem'),
-    200: pxTo(200, baseFontSize, 'rem'),
-    250: pxTo(250, baseFontSize, 'rem'),
+    unset: "unset",
+    auto: "auto",
+    0: "0",
+    2: pxTo(2, baseFontSize, "rem"),
+    5: pxTo(5, baseFontSize, "rem"),
+    10: pxTo(10, baseFontSize, "rem"),
+    15: pxTo(15, baseFontSize, "rem"),
+    20: pxTo(20, baseFontSize, "rem"),
+    25: pxTo(25, baseFontSize, "rem"),
+    30: pxTo(30, baseFontSize, "rem"),
+    35: pxTo(35, baseFontSize, "rem"),
+    40: pxTo(40, baseFontSize, "rem"),
+    50: pxTo(50, baseFontSize, "rem"),
+    60: pxTo(60, baseFontSize, "rem"),
+    70: pxTo(70, baseFontSize, "rem"),
+    75: pxTo(75, baseFontSize, "rem"),
+    80: pxTo(80, baseFontSize, "rem"),
+    90: pxTo(90, baseFontSize, "rem"),
+    100: pxTo(100, baseFontSize, "rem"),
+    120: pxTo(120, baseFontSize, "rem"),
+    200: pxTo(200, baseFontSize, "rem"),
+    250: pxTo(250, baseFontSize, "rem"),
     ...margins,
   },
 
@@ -369,20 +366,20 @@ module.exports = {
   */
 
   negativeMargin: {
-    unset: 'unset',
-    px: '1px',
-    0: '0',
-    2: pxTo(2, baseFontSize, 'rem'),
-    5: pxTo(5, baseFontSize, 'rem'),
-    10: pxTo(10, baseFontSize, 'rem'),
-    15: pxTo(15, baseFontSize, 'rem'),
-    20: pxTo(20, baseFontSize, 'rem'),
-    25: pxTo(25, baseFontSize, 'rem'),
-    30: pxTo(30, baseFontSize, 'rem'),
-    40: pxTo(40, baseFontSize, 'rem'),
-    50: pxTo(50, baseFontSize, 'rem'),
-    60: pxTo(60, baseFontSize, 'rem'),
-    100: pxTo(100, baseFontSize, 'rem'),
+    unset: "unset",
+    px: "1px",
+    0: "0",
+    2: pxTo(2, baseFontSize, "rem"),
+    5: pxTo(5, baseFontSize, "rem"),
+    10: pxTo(10, baseFontSize, "rem"),
+    15: pxTo(15, baseFontSize, "rem"),
+    20: pxTo(20, baseFontSize, "rem"),
+    25: pxTo(25, baseFontSize, "rem"),
+    30: pxTo(30, baseFontSize, "rem"),
+    40: pxTo(40, baseFontSize, "rem"),
+    50: pxTo(50, baseFontSize, "rem"),
+    60: pxTo(60, baseFontSize, "rem"),
+    100: pxTo(100, baseFontSize, "rem"),
   },
 
   /*
@@ -418,9 +415,9 @@ module.exports = {
   */
 
   opacity: {
-    0: '0',
-    50: '.5',
-    100: '1',
+    0: "0",
+    50: ".5",
+    100: "1",
   },
 
   /*
@@ -430,7 +427,7 @@ module.exports = {
   | Class name: .fill-{name}
   */
 
-  svgFill: { },
+  svgFill: {},
 
   /*
   |-----------------------------------------------------------------------------
@@ -439,7 +436,7 @@ module.exports = {
   | Class name: .stroke-{name}
   */
 
-  svgStroke: { },
+  svgStroke: {},
 
   /*
   |-----------------------------------------------------------------------------
@@ -461,54 +458,54 @@ module.exports = {
   */
 
   modules: {
-    appearance: ['responsive'],
+    appearance: ["responsive"],
     backgroundAttachment: false,
-    backgroundColors: ['responsive', 'hover', 'focus', 'focus-within'],
+    backgroundColors: ["responsive", "hover", "focus", "focus-within"],
     backgroundPosition: false,
     backgroundRepeat: false,
     backgroundSize: false,
     borderCollapse: false,
-    borderColors: ['responsive', 'hover', 'focus'],
-    borderRadius: ['responsive'],
-    borderStyle: ['responsive'],
-    borderWidths: ['responsive'],
-    cursor: ['responsive'],
-    display: ['responsive'],
-    flexbox: ['responsive'],
+    borderColors: ["responsive", "hover", "focus"],
+    borderRadius: ["responsive"],
+    borderStyle: ["responsive"],
+    borderWidths: ["responsive"],
+    cursor: ["responsive"],
+    display: ["responsive"],
+    flexbox: ["responsive"],
     float: false,
-    fonts: ['responsive'],
-    fontWeights: ['responsive', 'hover', 'focus'],
-    height: ['responsive'],
-    leading: ['responsive'],
-    lists: ['responsive'],
-    margin: ['responsive'],
-    maxHeight: ['responsive'],
-    maxWidth: ['responsive'],
-    minHeight: ['responsive'],
-    minWidth: ['responsive'],
-    negativeMargin: ['responsive'],
-    opacity: ['responsive', 'hover', 'focus'],
-    outline: ['focus'],
-    overflow: ['responsive'],
-    padding: ['responsive'],
-    pointerEvents: ['responsive'],
-    position: ['responsive'],
+    fonts: ["responsive"],
+    fontWeights: ["responsive", "hover", "focus"],
+    height: ["responsive"],
+    leading: ["responsive"],
+    lists: ["responsive"],
+    margin: ["responsive"],
+    maxHeight: ["responsive"],
+    maxWidth: ["responsive"],
+    minHeight: ["responsive"],
+    minWidth: ["responsive"],
+    negativeMargin: ["responsive"],
+    opacity: ["responsive", "hover", "focus"],
+    outline: ["focus"],
+    overflow: ["responsive"],
+    padding: ["responsive"],
+    pointerEvents: ["responsive"],
+    position: ["responsive"],
     resize: false,
-    shadows: ['responsive', 'hover', 'focus'],
+    shadows: ["responsive", "hover", "focus"],
     svgFill: false,
     svgStroke: false,
     tableLayout: false,
-    textAlign: ['responsive'],
-    textColors: ['responsive', 'hover', 'focus'],
-    textSizes: ['responsive'],
-    textStyle: ['responsive', 'hover', 'focus'],
-    tracking: ['responsive'],
-    userSelect: ['responsive'],
+    textAlign: ["responsive"],
+    textColors: ["responsive", "hover", "focus"],
+    textSizes: ["responsive"],
+    textStyle: ["responsive", "hover", "focus"],
+    tracking: ["responsive"],
+    userSelect: ["responsive"],
     verticalAlign: false,
     visibility: false,
     whitespace: false,
-    width: ['responsive'],
-    zIndex: ['responsive'],
+    width: ["responsive"],
+    zIndex: ["responsive"],
   },
 
   /*
@@ -526,7 +523,7 @@ module.exports = {
   */
 
   plugins: [
-    require('tailwindcss/plugins/container')({
+    require("tailwindcss/plugins/container")({
       // center: true,
       // padding: '1rem',
     }),
@@ -543,9 +540,8 @@ module.exports = {
   */
 
   options: {
-    prefix: '',
+    prefix: "",
     important: false,
-    separator: ':',
+    separator: ":",
   },
-
 }

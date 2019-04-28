@@ -1,13 +1,13 @@
-import { withRouter } from 'next/router'
-import Link from 'next/link'
-import React, { Children } from 'react'
+import { withRouter } from "next/router"
+import Link from "next/link"
+import React, { Children } from "react"
 
 const ActiveLink = ({ router, children, ...props }) => {
   const child = Children.only(children)
   let className = child.props.className || null
 
-  if ((router.asPath === props.as || router.asPath === "/" && props.as.includes('#work')) && props.activeClassName) {
-    className = `${className !== null ? className : ''} ${props.activeClassName}`.trim()
+  if ((router.asPath === props.as || (router.asPath === "/" && props.as.includes("#work"))) && props.activeClassName) {
+    className = `${className !== null ? className : ""} ${props.activeClassName}`.trim()
   }
 
   delete props.activeClassName

@@ -1,23 +1,23 @@
 export default {
   formContact: {
-    legend: 'Let\'s chat together',
+    legend: "Let's chat together",
     fields: {
-      name: 'My name is',
-      mail: 'you can contact me at',
-      message: 'I\'d like to talk about'
+      name: "My name is",
+      mail: "you can contact me at",
+      message: "I'd like to talk about",
     },
     submit: "Send",
   },
   goToWebsite: {
-    fr: 'Consulter le site en français',
-    en: 'Go to website in english',
+    fr: "Consulter le site en français",
+    en: "Go to website in english",
   },
   socials: {
-    goTo: 'Check my %label%'
+    goTo: "Check my %label%",
   },
   nav: {
-    work: 'Work',
-    about: 'About',
+    work: "Work",
+    about: "About",
   },
   footer: {
     designBy: `
@@ -35,21 +35,22 @@ export default {
   },
   pages: {
     home: {
-      seeMore: 'Want to see more ?',
-      goToProject: 'Go to project %name%',
+      seeMore: "Want to see more ?",
+      goToProject: "Go to project %name%",
     },
     work: {
       projectDuration: '<span class="font-bold">Project duration:</span> %duration%',
       projectType: {
-        personal: 'Personal project',
-        professional: 'Professional project',
-        school: 'School project',
-        freelance: 'Freelance'
+        personal: "Personal project",
+        professional: "Professional project",
+        school: "School project",
+        freelance: "Freelance",
       },
       seeMore: {
-        title: 'Want to see more ?',
-        paragraph: 'You can check <a href="%workUrl%">my projects</a> or you can learn <a href="%aboutUrl%">about me</a>.'
+        title: "Want to see more ?",
+        paragraph:
+          'You can check <a href="%workUrl%">my projects</a> or you can learn <a href="%aboutUrl%">about me</a>.',
       },
-    }
+    },
   },
 }

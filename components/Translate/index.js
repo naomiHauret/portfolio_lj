@@ -1,18 +1,18 @@
-import {useState, memo } from "react"
+import { useState, memo } from "react"
 import { Translation as TranslationContext } from "store/Translation"
-import { t } from 'utils/translation'
-import PropTypes from 'prop-types'
+import { t } from "utils/translation"
+import PropTypes from "prop-types"
 
-const Translate = memo(
-  props => {
-    const { id, values } = props
+const Translate = memo((props) => {
+  const { id, values } = props
 
-    // use dangerouslySetInnerHTML so we can use markup in our translations
-    return <TranslationContext.Consumer>
-      {translationObject =>  <span dangerouslySetInnerHTML={{ __html: t(id, translationObject, values) }} /> }
+  // use dangerouslySetInnerHTML so we can use markup in our translations
+  return (
+    <TranslationContext.Consumer>
+      {(translationObject) => <span dangerouslySetInnerHTML={{ __html: t(id, translationObject, values) }} />}
     </TranslationContext.Consumer>
-  }
-)
+  )
+})
 
 Translate.propTypes = {
   /**

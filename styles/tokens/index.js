@@ -50,8 +50,8 @@ const myDesignSystem = {
     3: pxTo(3, pxFontSize.base, "rem"),
   },
   shadows: {
-    default: `0 ${pxTo(2, pxFontSize.base, "rem")} ${pxTo(4, pxFontSize.base, "rem")} 0 rgba(0,0,0,0.2)`
-  }
+    default: `0 ${pxTo(2, pxFontSize.base, "rem")} ${pxTo(4, pxFontSize.base, "rem")} 0 rgba(0,0,0,0.2)`,
+  },
 }
 
 const ds = new DesignSystem(myDesignSystem, {

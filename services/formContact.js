@@ -1,8 +1,8 @@
-import { useAsyncEndpoint } from 'utils/useAsyncEndpoint'
-import { MAILER_KEY } from 'utils/config'
+import { useAsyncEndpoint } from "utils/useAsyncEndpoint"
+import { MAILER_KEY } from "utils/config"
 
 export function useSendMail() {
-  return useAsyncEndpoint(data => ({
+  return useAsyncEndpoint((data) => ({
     url: `https://www.enformed.io/${MAILER_KEY}`,
     params: {
       method: "POST",
@@ -11,6 +11,6 @@ export function useSendMail() {
         Accept: "application/json",
       },
       body: JSON.stringify(data),
-    }
+    },
   }))
 }
