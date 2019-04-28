@@ -4,6 +4,14 @@
     {
       "src": "package.json",
       "use": "@now/next"
+    },
+    {
+      "src": "/lambda/sitemap.xml.js",
+      "use": "@now/node"
+    },
+    {
+      "src": "/lambda/robots.txt.js",
+      "use": "@now/node"
     }
   ],
   "routes": [
@@ -28,6 +36,14 @@
     {
       "src": "/(?<lang>.+)\/work\/(?<slug>.+)",
       "dest": "/work?lang=$lang&slug=$slug"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/lambda/sitemap.xml.js"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/lambda/robots.txt.js"
     }
   ]
 }

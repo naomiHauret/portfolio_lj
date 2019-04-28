@@ -2,9 +2,13 @@ User-agent: Twitterbot
 Disallow:
 
 User-Agent: *
-Allow: /fr/
-Allow: /en/
+Allow: /
+Allow: /fr
+Allow: /en
 Allow: /fr/about
 Allow: /en/about
+Allow: /en/work/*
+Allow: /fr/work/*
+Disallow: /work
 
 Sitemap: https://lucasjouin.com/sitemap.xml

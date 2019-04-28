@@ -1,7 +1,7 @@
 {
   "name": "portfolio_lj",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lucas Jouin's portfolio source code.",
   "main": "index.js",
   "dependencies": {
     "@emotion/core": "^10.0.10",
@@ -49,7 +49,11 @@
   "keywords": [
     "nextjs",
     "react",
-    "react-ssr"
+    "react-ssr",
+    "now",
+    "now.sh",
+    "portfolio",
+    "tailwind"
   ],
   "author": "Naomi Hauret",
   "license": "MIT"
