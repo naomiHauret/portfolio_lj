@@ -63,7 +63,7 @@ class Work extends PureComponent {
                 }),
               )}
             >
-              <img className="w-full h-full max-w-300" src={`${content["project-image-preview"].url}`} />
+              <img alt="" className="w-full h-full max-w-300" src={`${content["project-image-preview"].url}`} />
             </div>
             <div className="leading-23">
               {content[`body-${availablesLocales[locale]}`].map((slice, index) => {

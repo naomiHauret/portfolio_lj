@@ -109,7 +109,7 @@ class Home extends PureComponent {
                               }),
                             )}
                           >
-                            <img className="h-full w-full max-w-300" src={project["image-preview"]["menu-preview"].url} />
+                            <img alt="" className="h-full w-full max-w-300" src={project["image-preview"]["menu-preview"].url} />
                             <figcaption className="hidden">
                               <Translate
                                 id="pages.home.goToProject"

@@ -57,7 +57,7 @@ class About extends PureComponent {
               key={key}
             >
               {picture[`${galleryId}-logo`] !== undefined && (
-                <img className="w-full h-full max-w-145 object-contain" src={picture[`${galleryId}-logo`].url} />
+                <img alt="" className="w-full h-full max-w-145 object-contain" src={picture[`${galleryId}-logo`].url} />
               )}
               {picture[`${galleryId}-link`] !== undefined && (
                 <a
@@ -105,6 +105,7 @@ class About extends PureComponent {
                 </div>
                 <div className="w-full md:w-4/12 md:ml-60 text-center md:text-left">
                   <img
+                    alt=""
                     className="rounded-full overflow-hidden text-center md:text-left"
                     src={portraits[Math.floor(Math.random() * portraits.length)]}
                   />
