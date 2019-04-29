@@ -31,6 +31,7 @@ export default class MyDocument extends Document {
             <link rel="stylesheet" type="text/css" href={"/_next/static/css/styles.chunk.css?v=" + Date.now()} />
           )}
           <meta charset="UTF-8" />
+          <meta name="google-site-verification" content="ei5FqA2JEo-PM4QEbGyceut41bVwh2wTqY1pwxJvHWg" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta http-equiv="X-UA-Compatible" content="ie=edge" />
           <meta name="author" content="Lucas Jouin" />

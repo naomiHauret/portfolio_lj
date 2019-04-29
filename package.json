@@ -41,7 +41,8 @@
     "dev:start": "npm run build && npm run dev",
     "start": "next start",
     "now-build": "next build",
-    "deploy": "now",
+    "preprod:deploy": "now",
+    "deploy": "now --target production",
     "format:js": "npx prettier --parser=babel --write \"tailwind.js\" \"server.js\" \"next.config.js\" \"styles/**/*.js\" \"components/**/*.js\" \"pages/**/*.js\" \"services/**/*.js\" \"store/**/*.js\" \"translations/**/*.js\" \"utils/**/*.js\"",
     "format:css": "npx prettier --parser=css --write \"styles/**/*.css\"",
     "format": "npm run format:css && npm run format:js"
