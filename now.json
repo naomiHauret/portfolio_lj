@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "alias": "lucasjouin.com",
   "builds": [
     {
       "src": "package.json",

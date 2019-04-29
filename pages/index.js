@@ -74,73 +74,73 @@ class Home extends PureComponent {
         {this.props.error ? (
           <Fragment />
         ) : (
-          <Fragment>
-            <h1
-              className={`${
-                styles.headingDecoration
-              } leading-40 sm:leading-50 block max-w-600 mx-auto text-20 sm:text-35 font-500 text-center mb-50 sm:my-100`}
-            >
-              {RichText.render(content[`introduction-paragraph-${availablesLocales[locale]}`], linkResolver)}
-            </h1>
-            <nav id="work">
-              <ul className={`list-reset mx-auto ${styles.projectsGrid}`}>
-                {projects.map((project) => (
-                  <li className="md:cursor-pointer relative" key={project.uid}>
-                    <Link
-                      as={`/${locale}/work/${project.uid}`}
-                      href={`/work?lang=${locale}&slug=${project.uid}`}
-                      passHref
-                    >
-                      <a
-                        title={t(
-                          "pages.home.goToProject",
-                          { locale, fallback: "en" },
-                          {
-                            name: project[`name-${availablesLocales[locale]}`],
-                          },
-                        )}
-                        className="block absolute pin-l pin-t w-full h-full"
+            <Fragment>
+              <h1
+                className={`${
+                  styles.headingDecoration
+                  } leading-40 sm:leading-50 block max-w-600 mx-auto text-20 sm:text-35 font-500 text-center mb-50 sm:my-100`}
+              >
+                {RichText.render(content[`introduction-paragraph-${availablesLocales[locale]}`], linkResolver)}
+              </h1>
+              <nav id="work">
+                <ul className={`list-reset mx-auto ${styles.projectsGrid}`}>
+                  {projects.map((project) => (
+                    <li className="md:cursor-pointer relative" key={project.uid}>
+                      <Link
+                        as={`/${locale}/work/${project.uid}`}
+                        href={`/work?lang=${locale}&slug=${project.uid}`}
+                        passHref
                       >
-                        <figure
-                          className={`relative h-full w-full p-40 sm:p-30 m-0 flex items-center justify-center`.concat(
-                            " ",
-                            css({
-                              backgroundColor: project.color,
-                            }),
+                        <a
+                          title={t(
+                            "pages.home.goToProject",
+                            { locale, fallback: "en" },
+                            {
+                              name: project[`name-${availablesLocales[locale]}`],
+                            },
                           )}
+                          className="block absolute pin-l pin-t w-full h-full"
                         >
-                          <img className="h-full w-full max-w-300" src={project["image-preview"]["menu-preview"].url} />
-                          <figcaption className="hidden">
-                            <Translate
-                              id="pages.home.goToProject"
-                              values={{
-                                name: project[`name-${availablesLocales[locale]}`],
-                              }}
-                            />
-                          </figcaption>
-                        </figure>
-                      </a>
-                    </Link>
+                          <figure
+                            className={`relative h-full w-full p-40 sm:p-30 m-0 flex items-center justify-center`.concat(
+                              " ",
+                              css({
+                                backgroundColor: project.color,
+                              }),
+                            )}
+                          >
+                            <img className="h-full w-full max-w-300" src={project["image-preview"]["menu-preview"].url} />
+                            <figcaption className="hidden">
+                              <Translate
+                                id="pages.home.goToProject"
+                                values={{
+                                  name: project[`name-${availablesLocales[locale]}`],
+                                }}
+                              />
+                            </figcaption>
+                          </figure>
+                        </a>
+                      </Link>
+                    </li>
+                  ))}
+                  <li>
+                    <aside className="sm:ml-20 ">
+                      <h2
+                        className={`mt-30 mb-20 sm:mt-20 text-20 text-blue font-bold relative ${
+                          styles.subTitleDecoration
+                          }`}
+                      >
+                        <Translate id="pages.home.seeMore" />
+                      </h2>
+                      <section className={`font-500 text-gray leading-30 text-14`}>
+                        {RichText.render(content[`more-paragraph-${availablesLocales[locale]}`], linkResolver)}
+                      </section>
+                    </aside>
                   </li>
-                ))}
-                <li>
-                  <aside className="sm:ml-20 ">
-                    <h2
-                      className={`mt-30 mb-20 sm:mt-20 text-20 text-blue font-bold relative ${
-                        styles.subTitleDecoration
-                      }`}
-                    >
-                      <Translate id="pages.home.seeMore" />
-                    </h2>
-                    <section className={`font-500 text-gray leading-30 text-14`}>
-                      {RichText.render(content[`more-paragraph-${availablesLocales[locale]}`], linkResolver)}
-                    </section>
-                  </aside>
-                </li>
-              </ul>
-            </nav>
-          </Fragment>
-        )}
+                </ul>
+              </nav>
+            </Fragment>
+          )}
         <script type="application/ld+json" dangerouslySetInnerHTML={this._addJSONLD()} />
       </Layout>
     )

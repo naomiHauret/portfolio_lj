@@ -25,11 +25,15 @@ export default class MyDocument extends Document {
   render() {
     const { isProduction } = this.props
     return (
-      <html>
+      <html lang="en">
         <Head>
           {isProduction && (
             <link rel="stylesheet" type="text/css" href={"/_next/static/css/styles.chunk.css?v=" + Date.now()} />
           )}
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+          <meta name="author" content="Lucas Jouin" />
         </Head>
         <body>
           <Main />

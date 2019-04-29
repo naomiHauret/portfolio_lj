@@ -1,4 +1,4 @@
-const app = require("express")()
+const app = require("./utils/app")
 const Prismic = require("prismic-javascript")
 const sm = require('sitemap')
 const locales = ['fr', 'en']
@@ -45,14 +45,9 @@ const createSitemap = (res) => {
   })
 }
 
-
-
-// For ANY (*) GET,
-// Now does ROUTING, Express does HANDLING
 app.get('*', (req, res) => {
-  res.header('Content-Type', 'application/xml');
+  res.header('Content-Type', 'application/xml')
   createSitemap(res)
 })
 
-// Export your app
 module.exports = app
