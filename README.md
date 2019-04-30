@@ -1,4 +1,9 @@
-Source code of Lucas Jouin's portfolio.
+<p align="center"> 
+<img src="https://i.imgur.com/AjFbq6F.png" />
+</p>
+<p align="center">
+  Source code of Lucas Jouin's portfolio
+</p>
 
 - [Website](https://lucasjouin.com)
 - [CSS stats](https://cssstats.com/stats?url=https%3A%2F%2Flucasjouin.com&ua=Browser%20Default)
