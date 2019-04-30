@@ -5,4 +5,8 @@
   @apply .text-center;
   @apply .overflow-hidden;
 }
+
+.wrapper span {
+  -webkit-text-fill-color: currentColor !important; /* Safari fix */
+}
 /*! /* purgecss end ignore */

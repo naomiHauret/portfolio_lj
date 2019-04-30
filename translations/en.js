@@ -18,6 +18,10 @@ export default {
   nav: {
     work: "Work",
     about: "About",
+    titles:  {
+      about: 'Go to "about" page',
+      work: 'Go to "work" page',
+    },
   },
   footer: {
     designBy: `

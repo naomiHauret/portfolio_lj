@@ -2,17 +2,24 @@ import { withRouter } from "next/router"
 import Translate from "components/Translate"
 import Link from "./Link"
 import styles from "./styles.local.css"
+import { t } from "utils/translation"
 
 const Navigation = (props) => {
   const { router } = props
   const locale = router.query.lang ? router.query.lang : "en"
   return (
     <nav role="navigation">
-      <ul className={`list-reset ${styles.links} flex items-center`}>
+      <ul className={`list-reset lowercase ${styles.links} flex items-center`}>
         <li className={`w-150 relative ${styles.withDecoration}`}>
-          <Link as={`/${locale}`} href={`/?lang=${locale}`} passHref>
-            <a>
-              <strong className="text-blue text-base lowercase font-bold ">
+          <Link as={`/${locale}/about`} href={`/about?lang=${locale}`} passHref>
+            <a
+              title={
+                t(
+                "nav.titles.about",
+                { locale, fallback: "en" },
+              )}
+            >
+              <strong className="text-blue text-base font-bold ">
                 Lucas
                 <br />
                 Jouin
@@ -22,7 +29,11 @@ const Navigation = (props) => {
         </li>
         <li className="sm:mt-0 mr-20 sm:mr-30">
           <Link activeClassName={`${styles.active}`} as={`/${locale}#work`} href={`/?lang=${locale}#work`} passHref>
-            <a>
+            <a title={
+              t(
+                "nav.titles.work",
+                { locale, fallback: "en" },
+              )}>
               <Translate id="nav.work" />
             </a>
           </Link>
@@ -35,7 +46,11 @@ const Navigation = (props) => {
             href={`/about?lang=${locale}`}
             passHref
           >
-            <a>
+            <a title={
+              t(
+                "nav.titles.about",
+                { locale, fallback: "en" },
+              )}>
               <Translate id="nav.about" />
             </a>
           </Link>

@@ -18,6 +18,10 @@ export default {
   nav: {
     work: "Travaux",
     about: "À propos",
+    titles: {
+      about: 'Consulter la page "À propos"',
+      work: 'Consulter la page "Travaux"',
+    },
   },
   footer: {
     designBy: `
