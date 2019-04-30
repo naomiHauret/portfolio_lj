@@ -11,13 +11,8 @@ const Navigation = (props) => {
     <nav role="navigation">
       <ul className={`list-reset lowercase ${styles.links} flex items-center`}>
         <li className={`w-150 relative ${styles.withDecoration}`}>
-          <Link as={`/${locale}/about`} href={`/about?lang=${locale}`} passHref>
+          <Link as={`/${locale}`} href={`/?lang=${locale}`} passHref>
             <a
-              title={
-                t(
-                "nav.titles.about",
-                { locale, fallback: "en" },
-              )}
             >
               <strong className="text-blue text-base font-bold ">
                 Lucas
@@ -29,11 +24,7 @@ const Navigation = (props) => {
         </li>
         <li className="sm:mt-0 mr-20 sm:mr-30">
           <Link activeClassName={`${styles.active}`} as={`/${locale}#work`} href={`/?lang=${locale}#work`} passHref>
-            <a title={
-              t(
-                "nav.titles.work",
-                { locale, fallback: "en" },
-              )}>
+            <a>
               <Translate id="nav.work" />
             </a>
           </Link>
@@ -46,11 +37,7 @@ const Navigation = (props) => {
             href={`/about?lang=${locale}`}
             passHref
           >
-            <a title={
-              t(
-                "nav.titles.about",
-                { locale, fallback: "en" },
-              )}>
+            <a>
               <Translate id="nav.about" />
             </a>
           </Link>

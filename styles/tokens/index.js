@@ -24,9 +24,9 @@ const myDesignSystem = {
     width: {
       xs: "100%",
       sm: 750,
-      md: 940,
-      lg: 980,
-      xl: 1200,
+      md: 965,
+      lg: 965,
+      xl: 965,
     },
   },
   breakpoints: {

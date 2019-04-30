@@ -27,11 +27,12 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <meta charset="UTF-8" />
+          <meta charSet="UTF-8" />
           <meta name="google-site-verification" content="ei5FqA2JEo-PM4QEbGyceut41bVwh2wTqY1pwxJvHWg" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
-          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+          <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
           <meta name="author" content="Lucas Jouin" />
+          <link rel="icon" href="/static/favicon/32x32.ico" />
         </Head>
         <body>
           <Main />

@@ -98,7 +98,7 @@ class About extends PureComponent {
           <Fragment />
         ) : (
           <Fragment>
-            <div className="md:px-1/12  mb-40 sm:mb-70">
+            <div className="md:px-150  mb-40 sm:mb-70">
               <section className="flex flex-col-reverse md:flex-row">
                 <div className="leading-23 text-15 md:text-base text-gray w-full md:w-6/12 pt-50">
                   {RichText.render(content[`about-paragraph-${availablesLocales[locale]}`], linkResolver)}
