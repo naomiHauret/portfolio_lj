@@ -17,7 +17,7 @@
           "services": "./services",
           "styles": "./styles",
           "translations": "./translations",
-          "store": "./store",
+          "store": "./store"
         }
       }
     ]
