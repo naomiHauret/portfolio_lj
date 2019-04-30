@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="217" height="46" viewBox="0 0 217 46">
+  <defs>
+    <linearGradient id="helloyou_line3-a" x1="0%" y1="50%" y2="50%">
+      <stop offset="0%" stop-color="#EEEE52"/>
+      <stop offset="61.043%" stop-color="#EB58E2"/>
+      <stop offset="100%" stop-color="#2EBDFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="217" height="12" x="-.397" y="16.899" fill="url(#helloyou_line3-a)" fill-rule="evenodd" transform="rotate(-9 108.103 22.9)"/>
+</svg>

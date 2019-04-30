@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="119" height="96" viewBox="0 0 119 96">
+  <defs>
+    <linearGradient id="helloyou_triangle2-a" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#06D1BB"/>
+      <stop offset="100%" stop-color="#068299"/>
+    </linearGradient>
+  </defs>
+  <polygon fill="url(#helloyou_triangle2-a)" fill-rule="evenodd" points="46.467 6.726 .92 81.3 90.313 94.726 60.388 50.726 113.346 42.026" transform="rotate(-168 57.133 50.726)"/>
+</svg>

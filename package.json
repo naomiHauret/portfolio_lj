@@ -36,7 +36,7 @@
     "tailwindcss": "^0.7.4"
   },
   "scripts": {
-    "dev": "node server.js",
+    "dev": "now dev",
     "build": "next build",
     "dev:start": "npm run build && npm run dev",
     "start": "next start",
