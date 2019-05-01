@@ -40,7 +40,7 @@ class Work extends PureComponent {
     else {
       return (
         <Layout locale={locale} seo={seo}>
-          <section className="md:px-150">
+          <section className="md:pl-150 pr-10">
             <h1 className="text-center text-blue text-20 sm:text-30 my-20">
               {content[`project-name-${availablesLocales[locale]}`]}
             </h1>
