@@ -1,6 +1,6 @@
 export const trackPageView = (url) => {
   try {
-    window.gtag("config", "UA-XXXXXXXX-X", {
+    window.gtag("config", "UA-139394239-1", {
       page_location: url,
     })
   } catch (error) {
