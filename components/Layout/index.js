@@ -29,7 +29,7 @@ const Layout = memo((props) => {
         title={seo[title]}
         metadescription={seo[metadescription]}
         socialmediaTitle={seo[socialmediaTitle]}
-        socialmediaDescription={seo[socialmediaTitle]}
+        socialmediaDescription={seo[socialmediaDescription]}
         socialmediaLocale={availableLocales[locale]}
       />
       <TranslationContext.Provider value={translation}>

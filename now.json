@@ -23,19 +23,19 @@
       }
     },
     {
-      "src": "/^(\/)",
+      "src": "/",
       "dest": "/?lang=en"
     },
     {
-      "src": "/^(\/)(?<lang>[a-z]{2}$)",
+      "src": "/(?<lang>[a-z]{2})$",
       "dest": "/?lang=$lang"
     },
     {
-      "src": "/(?<lang>.+)\/about",
+      "src": "/(?<lang>[a-z]{2})/about",
       "dest": "/about?lang=$lang"
     },
     {
-      "src": "/(?<lang>.+)\/work\/(?<slug>.+)",
+      "src": "/(?<lang>[a-z]{2})/work/(?<slug>.+)$",
       "dest": "/work?lang=$lang&slug=$slug"
     },
     {
