@@ -26,17 +26,26 @@
       "src": "/",
       "dest": "/?lang=en"
     },
-    {
-      "src": "/(?<lang>[a-z]{2})$",
-      "dest": "/?lang=$lang"
+
+    { "src": "/(?<lang>[a-z]{2})$",
+      "status": 301,
+      "headers": {
+         "Location": "/?lang=$lang"
+      }
     },
     {
       "src": "/(?<lang>[a-z]{2})/about",
-      "dest": "/about?lang=$lang"
+      "status": 301,
+      "headers": {
+        "Location": "/about?lang=$lang"
+      }
     },
     {
       "src": "/(?<lang>[a-z]{2})/work/(?<slug>.+)$",
-      "dest": "/work?lang=$lang&slug=$slug"
+      "status": 301,
+      "headers": {
+        "Location": "/work?lang=$lang&slug=$slug"
+      }
     },
     {
       "src": "/sitemap.xml",
