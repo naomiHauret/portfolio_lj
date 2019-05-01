@@ -5,12 +5,10 @@
   "main": "index.js",
   "dependencies": {
     "@emotion/core": "^10.0.10",
-    "animejs": "^3.0.1",
     "browserslist": "^4.5.5",
     "design-system-utils": "^1.5.0",
     "dotize": "^0.3.0",
     "emotion": "^10.0.9",
-    "express": "^4.16.4",
     "next": "^8.0.3",
     "prismic-javascript": "^2.0.3",
     "prismic-reactjs": "^0.3.2",
@@ -54,7 +52,8 @@
     "now",
     "now.sh",
     "portfolio",
-    "tailwind"
+    "tailwind",
+    "serverless"
   ],
   "author": "Naomi Hauret",
   "license": "MIT"
