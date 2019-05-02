@@ -1,6 +1,8 @@
+import { ANALYTICS } from 'utils/config'
+
 export const trackPageView = (url) => {
   try {
-    window.gtag("config", "UA-139394239-1", {
+    window.gtag("config", `"${ANALYTICS}"`, {
       page_location: url,
     })
   } catch (error) {

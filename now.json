@@ -24,27 +24,33 @@
     },
     {
       "src": "/",
-      "dest": "/?lang=en"
+      "dest": "/?lang=en",
+      "headers": {
+        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate"
+      }
     },
 
     { "src": "/(?<lang>[a-z]{2})$",
       "status": 301,
       "headers": {
-         "Location": "/?lang=$lang"
+        "Location": "/?lang=$lang",
+        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate"
       }
     },
     {
       "src": "/(?<lang>[a-z]{2})/about",
       "status": 301,
       "headers": {
-        "Location": "/about?lang=$lang"
+        "Location": "/about?lang=$lang",
+        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate"
       }
     },
     {
       "src": "/(?<lang>[a-z]{2})/work/(?<slug>.+)$",
       "status": 301,
       "headers": {
-        "Location": "/work?lang=$lang&slug=$slug"
+        "Location": "/work?lang=$lang&slug=$slug",
+        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate"
       }
     },
     {
@@ -54,6 +60,13 @@
     {
       "src": "/robots.txt",
       "dest": "/lambda/robots.txt.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1",
+      "headers": {
+        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate"
+      }
     }
   ]
 }

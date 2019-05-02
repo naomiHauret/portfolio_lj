@@ -3,6 +3,7 @@
 
 import Document, { Head, Main, NextScript } from "next/document"
 import { Fragment } from "react"
+import { ANALYTICS } from 'utils/config'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -17,7 +18,7 @@ export default class MyDocument extends Document {
         window.dataLayer = window.dataLayer || []
         function gtag(){dataLayer.push(arguments)}
         gtag('js', new Date())
-        gtag('config', 'UA-XXXXXXXX-X')
+        gtag('config', "${ANALYTICS}")
       `,
     }
   }
@@ -33,13 +34,16 @@ export default class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
           <meta name="author" content="Lucas Jouin" />
           <link rel="icon" href="/static/favicon/32x32.ico" />
+          <link crossorigin="anonymous" rel="preload" href="/static/fonts/Objectivity-Regular.woff2" as="font" />
+          <link crossorigin="anonymous" rel="preload" href="/static/fonts/Objectivity-Bold.woff2" as="font" />
+          <link crossorigin="anonymous" rel="preload" href="/static/fonts/Objectivity-ExtraBold.woff2" as="font" />
         </Head>
         <body>
           <Main />
           <NextScript />
           {isProduction && (
             <Fragment>
-              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X" />
+              <script async src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS}`} />
               <script dangerouslySetInnerHTML={this._setGoogleTags()} />
             </Fragment>
           )}
