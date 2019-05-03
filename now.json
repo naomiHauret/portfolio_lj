@@ -26,7 +26,8 @@
       "src": "/",
       "dest": "/?lang=en",
       "headers": {
-        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate"
+        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate",
+        "Accept-Encoding": "br"
       }
     },
 
@@ -34,7 +35,8 @@
       "status": 301,
       "headers": {
         "Location": "/?lang=$lang",
-        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate"
+        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate",
+        "Accept-Encoding": "br"
       }
     },
     {
@@ -42,7 +44,8 @@
       "status": 301,
       "headers": {
         "Location": "/about?lang=$lang",
-        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate"
+        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate",
+        "Accept-Encoding": "br"
       }
     },
     {
@@ -50,7 +53,8 @@
       "status": 301,
       "headers": {
         "Location": "/work?lang=$lang&slug=$slug",
-        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate"
+        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate",
+        "Accept-Encoding": "br"
       }
     },
     {
@@ -60,13 +64,6 @@
     {
       "src": "/robots.txt",
       "dest": "/lambda/robots.txt.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1",
-      "headers": {
-        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate"
-      }
     }
   ]
 }
