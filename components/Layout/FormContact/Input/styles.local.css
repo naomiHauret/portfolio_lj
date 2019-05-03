@@ -25,4 +25,8 @@
 .wrapper> :--formInput:not(:focus):not(:placeholder-shown):invalid~.underline::after {
   animation: shake infinite 0.92s cubic-bezier(.36, .07, .19, .97) both;
 }
+
+.wrapper input::placeholder {
+  @apply .opacity-100;
+}
 /*! /* purgecss end ignore */
