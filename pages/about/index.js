@@ -25,13 +25,10 @@ class About extends PureComponent {
         "jobTitle": "UX Designer",
         "knowsAbout": "UX Design, UI Design",
         "email": "mailto:lucasjouin@gmail.com",
-        "image": "https://via.placeholder.com/150",
+        "image": "https://mir-s3-cdn-cf.behance.net/user/276/926fbb29837889.5824a477cc130.png",
         "alumniOf": "ECV Digital",
-        "url": "http://www.lucasjouin.fr",
-        "sameAs" : [
-          "https://www.linkedin.com/in/lucasjouin",
-          "https://www.behance.net/lucasjouin65eb",
-        ]
+        "url": "https://lucasjouin.com",
+		    "sameAs": ["https://www.linkedin.com/in/lucasjouin","https://www.behance.net/lucasjouin65eb"]
     }`,
     }
   }

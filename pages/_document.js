@@ -3,7 +3,7 @@
 
 import Document, { Head, Main, NextScript } from "next/document"
 import { Fragment } from "react"
-import { ANALYTICS } from 'utils/config'
+import { ANALYTICS } from "utils/config"
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
