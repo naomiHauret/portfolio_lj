@@ -18,7 +18,7 @@ export default {
   nav: {
     work: "Work",
     about: "About",
-    titles:  {
+    titles: {
       about: 'Go to "about" page',
       work: 'Go to "work" page',
     },

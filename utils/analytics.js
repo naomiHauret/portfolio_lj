@@ -1,4 +1,4 @@
-import { ANALYTICS } from 'utils/config'
+import { ANALYTICS } from "utils/config"
 
 export const trackPageView = (url) => {
   try {
