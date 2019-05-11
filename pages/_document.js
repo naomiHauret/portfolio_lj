@@ -34,9 +34,9 @@ export default class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
           <meta name="author" content="Lucas Jouin" />
           <link rel="icon" href="/static/favicon/32x32.ico" />
-          <link crossorigin="anonymous" rel="preload" href="/static/fonts/Objectivity-Regular.woff2" as="font" />
-          <link crossorigin="anonymous" rel="preload" href="/static/fonts/Objectivity-Bold.woff2" as="font" />
-          <link crossorigin="anonymous" rel="preload" href="/static/fonts/Objectivity-ExtraBold.woff2" as="font" />
+          <link crossOrigin="anonymous" rel="preload" href="/static/fonts/Objectivity-Regular.woff2" as="font" />
+          <link crossOrigin="anonymous" rel="preload" href="/static/fonts/Objectivity-Bold.woff2" as="font" />
+          <link crossOrigin="anonymous" rel="preload" href="/static/fonts/Objectivity-ExtraBold.woff2" as="font" />
         </Head>
         <body>
           <Main />
