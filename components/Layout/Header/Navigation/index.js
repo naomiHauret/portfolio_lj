@@ -12,8 +12,7 @@ const Navigation = (props) => {
       <ul className={`list-reset lowercase ${styles.links} flex items-center`}>
         <li className={`w-150 relative ${styles.withDecoration}`}>
           <Link as={`/${locale}`} href={`/?lang=${locale}`} passHref>
-            <a
-            >
+            <a>
               <strong className="text-blue text-base font-bold ">
                 Lucas
                 <br />
