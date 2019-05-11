@@ -1,0 +1,15 @@
+.wrapper div[data-oembed-provider="YouTube"] > div {
+  @apply .relative;
+  @apply .w-full;
+  @apply .h-0;
+  @apply .my-40;
+  padding-bottom: 56.25%;
+}
+
+.wrapper div[data-oembed-provider="YouTube"] iframe {
+  @apply .absolute;
+  @apply .w-full;
+  @apply .h-full;
+  @apply .pin-t;
+  @apply .pin-l;
+}

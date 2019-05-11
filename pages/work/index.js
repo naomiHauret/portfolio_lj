@@ -7,6 +7,7 @@ import { css } from "emotion"
 import Translate from "components/Translate"
 import { RichText } from "prismic-reactjs"
 import ImageZoom from "react-medium-image-zoom"
+import styles from './styles.local.css'
 
 class Work extends PureComponent {
   static async getInitialProps({ req, query }) {
@@ -69,7 +70,7 @@ class Work extends PureComponent {
               {content[`body-${availablesLocales[locale]}`].map((slice, index) => {
                 if (slice.slice_type === "text") {
                   return (
-                    <div className="mt-30 font-500 text-gray" key={index}>
+                    <div className={`mt-30 font-500 text-gray ${styles.wrapper}`} key={index}>
                       {RichText.render(slice.primary.text)}
                     </div>
                   )
