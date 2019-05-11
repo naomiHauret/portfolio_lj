@@ -46,6 +46,7 @@ export default {
       projectDuration: '<span class="font-bold">Durée du projet:</span> %duration%',
       projectType: {
         personal: "Projet personnel",
+        profesional: "Projet professionnel",
         professional: "Projet professionnel",
         school: "Projet d'école",
         freelance: "Freelance",
