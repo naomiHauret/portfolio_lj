@@ -1,12 +1,16 @@
-.wrapper div[data-oembed-provider="YouTube"] > div {
+.wrapper [data-oembed-provider]  {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.wrapper [data-oembed-provider] > div {
   @apply .relative;
   @apply .w-full;
   @apply .h-0;
-  @apply .my-40;
   padding-bottom: 56.25%;
 }
 
-.wrapper div[data-oembed-provider="YouTube"] iframe {
+.wrapper [data-oembed-provider] iframe {
   @apply .absolute;
   @apply .w-full;
   @apply .h-full;
