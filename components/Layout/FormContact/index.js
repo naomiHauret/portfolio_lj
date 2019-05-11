@@ -61,7 +61,7 @@ const FormContact = memo((props) => {
   return (
     <Fragment>
       <form
-        className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl sm:px-20 md:px-0 sm:mx-auto md:mx-0 "
+        className="w-full sm:max-w-640 sm:mx-auto sm:px-20 md:px-0 "
         name="sendEmail"
         role="form"
         onSubmit={handleSubmit}

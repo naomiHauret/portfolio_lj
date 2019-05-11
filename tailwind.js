@@ -275,6 +275,7 @@ module.exports = {
     145: pxTo(145, baseFontSize, "rem"),
     300: pxTo(300, baseFontSize, "rem"),
     600: pxTo(600, baseFontSize, "rem"),
+    640: pxTo(640, baseFontSize, "rem"),
     sm: pxTo(ds.get("grid.width.sm"), baseFontSize, "rem"),
     md: pxTo(ds.get("grid.width.md"), baseFontSize, "rem"),
     lg: pxTo(ds.get("grid.width.lg"), baseFontSize, "rem"),
