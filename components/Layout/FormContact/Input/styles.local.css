@@ -27,7 +27,9 @@
 }
 
 .wrapper input {
-  padding-top: 12px;
+  @media (--screen-md) {
+    padding-top: 12px;
+  }
 }
 
 .wrapper :--formInput:valid ~ span {
