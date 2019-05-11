@@ -18,15 +18,24 @@
   }
 }
 
-.wrapper > :--formInput:valid ~ .underline::after {
-  transform: translateX(125%);
-}
-
-.wrapper> :--formInput:not(:focus):not(:placeholder-shown):invalid~.underline::after {
+.wrapper > :--formInput:not(:focus):not(:placeholder-shown):invalid~.underline::after {
   animation: shake infinite 0.92s cubic-bezier(.36, .07, .19, .97) both;
 }
 
 .wrapper input::placeholder {
   @apply .opacity-100;
 }
+
+.wrapper input {
+  padding-top: 12px;
+}
+
+.wrapper :--formInput:valid ~ span {
+  visibility: hidden;
+}
+
+.wrapper input:valid ~ .underline::after {
+  transform: translateX(125%) !important;
+}
+
 /*! /* purgecss end ignore */

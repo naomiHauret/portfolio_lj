@@ -69,6 +69,7 @@ const Input = (props) => {
               " ",
               css({
                 minHeight: tagType === "textarea" ? pxTo(100, baseFontSize, "rem") : 0,
+                resize: "none",
               }),
             )}
             onChange={handleChange}
