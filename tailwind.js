@@ -247,6 +247,7 @@ module.exports = {
   minWidth: {
     0: "0",
     300: pxTo(300, baseFontSize, "rem"),
+    460: pxTo(460, baseFontSize, "rem"),
     full: "100%",
     ...widths,
   },

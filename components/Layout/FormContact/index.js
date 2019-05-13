@@ -1,5 +1,4 @@
 import React, { memo, Fragment, useState, useEffect } from "react"
-import Anime from "react-anime"
 import { css } from "emotion"
 import Translate from "components/Translate"
 import Input from "./Input"
