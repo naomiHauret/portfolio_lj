@@ -1,4 +1,4 @@
-import { Fragment } from "react"
+import React, { Fragment } from "react"
 import { css } from "emotion"
 import { pxTo } from "design-system-utils"
 import { ds } from "styles/tokens"

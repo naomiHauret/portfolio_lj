@@ -7,7 +7,7 @@ import { css } from "emotion"
 import Translate from "components/Translate"
 import { RichText } from "prismic-reactjs"
 import ImageZoom from "react-medium-image-zoom"
-import styles from './styles.local.css'
+import styles from "./styles.local.css"
 
 class Work extends PureComponent {
   static async getInitialProps({ req, query }) {

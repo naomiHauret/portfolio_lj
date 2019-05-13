@@ -5,7 +5,17 @@
   @apply .absolute;
   @apply .bg-violet;
   @apply .pin-b;
-  content: "";
+  content: " ";
   left: -2px;
 }
+
+.gridGallery {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 40px;
+  @media (--screen-sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /*! /* purgecss end ignore */

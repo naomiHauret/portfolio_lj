@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { memo } from "react"
+import React, { memo } from "react"
 import Translate from "components/Translate"
 
 const SEOHead = memo((props) => {

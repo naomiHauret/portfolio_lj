@@ -5,6 +5,7 @@ import Layout from "components/Layout"
 import { Client, linkResolver } from "utils/prismic"
 import { RichText } from "prismic-reactjs"
 import styles from "./styles.local.css"
+import { css } from "emotion"
 
 class About extends PureComponent {
   static async getInitialProps({ req }) {
@@ -35,7 +36,7 @@ class About extends PureComponent {
   _renderSection = (content, availablesLocales, locale, dataId, galleryId) => {
     return (
       <section className="mt-50 md:mt-70 flex flex-col md:flex-row">
-        <div className="w-full md:w-4/12 text-gray ">
+        <div className="w-full md:w-4/12 md:min-w-300 text-gray ">
           <h2
             className={`mb-20 md:mb-40 text-blue text-20 md:text-25 leading-32 font-bold relative ${
               styles.titleDecoration
@@ -43,14 +44,14 @@ class About extends PureComponent {
           >
             {content[`${dataId}-title-${availablesLocales[locale]}`]}
           </h2>
-          <div className="leading-23  text-15 md:text-base">
+          <div className="leading-23 text-15 md:text-base">
             {RichText.render(content[`${dataId}-paragraph-${availablesLocales[locale]}`], linkResolver)}
           </div>
         </div>
-        <ul className="list-reset flex-grow flex flex-wrap mt-10 md:mt-0">
+        <ul className={`list-reset flex-grow  md:ml-60 mt-10 md:mt-0 ${styles.gridGallery}`}>
           {content[`${dataId}-gallery`].map((picture, key) => (
             <li
-              className="w-full sm:w-2/12 md:w-2/12 flex my-30 md:my-0 mx-10 items-center justify-center flex-grow relative"
+              className="w-full flex my-30 md:my-0 items-center justify-center flex-grow relative"
               key={key}
             >
               {picture[`${galleryId}-logo`] !== undefined && (
@@ -95,17 +96,44 @@ class About extends PureComponent {
           <Fragment />
         ) : (
           <Fragment>
-            <div className="md:pl-150  mb-40 sm:mb-70">
+            <div className="md:pl-90 md:pr-60 mb-40 sm:mb-70">
               <section className="flex flex-col-reverse md:flex-row">
-                <div className="leading-23 text-15 md:text-base text-gray w-full md:w-6/12 pt-50">
+                <div className="leading-23 text-15 md:text-base text-gray w-full md:min-w-460 md:w-6/12 pt-50">
                   {RichText.render(content[`about-paragraph-${availablesLocales[locale]}`], linkResolver)}
                 </div>
-                <div className="w-full md:w-4/12 md:ml-60 text-center md:text-left">
-                  <img
-                    alt=""
-                    className="rounded-full overflow-hidden text-center md:text-left"
-                    src={portraits[Math.floor(Math.random() * portraits.length)]}
-                  />
+                <div className="w-full md:w-4/12  md:ml-60 text-center md:text-left">
+                <div className="relative">
+                  {/********* PINK ZIGZAG ********* */}
+                  <div className={`absolute`.concat(" ", css({
+                    bottom: "-20px",
+                    right: 0
+                  }))}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="106" height="122"><defs><linearGradient id="a" x1="11.897%" x2="105.371%" y1="37.49%" y2="54.418%"><stop offset="0%" stopColor="#C73DFF"/><stop offset="100%" stopColor="#FFF"/></linearGradient></defs><path fill="none" stroke="url(#a)" stroke-linecap="round" stroke-width="5" d="M-20.9 47.26c46.888-27.823 70.331-32.593 70.331-14.309 0 27.426-25.4 70.124 0 70.124s80.67-44.268 80.67-29.467" transform="rotate(-59 54.6 62.575)"/></svg>
+                  </div>
+                  {/********* END PINK ZIGZAG ********* */}
+                  {/********* BLUE SQUARE ***************/}
+                  <div className={`absolute`.concat(" ", css({
+                    left: "15px",
+                    bottom: "67px",
+                  }))}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="57" height="56"><defs><linearGradient id="b" x1="50%" x2="97.804%" y1="35.474%" y2="111.502%"><stop offset="0%" stopColor="#68D5FF"/><stop offset="100%" stopColor="#FFF"/></linearGradient></defs><path fill="url(#b)" fillRule="evenodd" transform="rotate(-13 22.656 29.904)" d="M12.835-.596l37.321 7.094v53.906l-55-11z"/></svg>
+                  </div>
+                  {/********* END BLUE SQUARE ********* */}
+                  {/********* GRADIENT LINE ***************/}
+                  <div className={`absolute`.concat(" ", css({
+                    zIndex: -1,
+                    top: "30px",
+                    left: "30px",
+                  }))}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="233" height="168"><defs><linearGradient id="c" x1="0%" y1="50%" y2="50%"><stop offset="0%" stopColor="#EEEE52"/><stop offset="61.043%" stopColor="#EB58E2"/><stop offset="100%" stopColor="#2EBDFF"/></linearGradient></defs><path fill="url(#c)" fillRule="evenodd" transform="rotate(35 116.198 83.659)" d="M-21.802 78.159h276v11h-276z"/></svg>                  </div>
+                  {/********* END GRADIENT LINE ********* */}
+
+                    <img
+                      alt=""
+                      className="rounded-full overflow-hidden text-center md:text-left"
+                      src={portraits[Math.floor(Math.random() * portraits.length)]}
+                    />
+                  </div>
                 </div>
               </section>
 
