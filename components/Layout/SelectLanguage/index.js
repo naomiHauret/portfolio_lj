@@ -1,8 +1,8 @@
-import { PureComponent, Fragment } from "react"
+import React, { PureComponent, Fragment } from "react"
 import Select from "react-select"
 import { pxTo } from "design-system-utils"
 import { ds } from "styles/tokens"
-import Router, { withRouter } from "next/router"
+import Router from "next/router"
 import Link from "components/Layout/Header/Navigation/Link"
 import Translate from "components/Translate"
 
@@ -157,4 +157,4 @@ class SelectLanguage extends PureComponent {
   }
 }
 
-export default withRouter(SelectLanguage)
+export default SelectLanguage

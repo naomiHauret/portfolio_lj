@@ -1,4 +1,4 @@
-import { memo } from "react"
+import React, { memo } from "react"
 import Translate from "components/Translate"
 import Navigation from "./Navigation"
 import Container from "components/Container"
@@ -14,7 +14,7 @@ const options = {
 }
 
 const Header = memo((props) => {
-  const { locale, changeLang } = props
+  const { locale, changeLang, router } = props
 
   const LoadingSelect = () => (
     <div className="flex items-center w-80 p-10 h-40 text-12 text-gray">{options[locale].label}</div>
@@ -24,12 +24,12 @@ const Header = memo((props) => {
     ssr: false,
   })
   return (
-    <header className="py-30 z-5 bg-white fixed w-full pin-l pin-t" role="banner">
+    <header className="py-30 z-20 bg-white fixed w-full pin-l pin-t" role="banner">
       <Container contained={true} staticStyles="flex items-center">
-        <Navigation />
+        <Navigation router={router} />
         <div className="hidden sm:flex sm:ml-auto">
           <div>
-            <NoSSRLanguageSelect onChange={changeLang} />
+            <NoSSRLanguageSelect router={router} onChange={changeLang} />
           </div>
           <SocialLinks />
         </div>

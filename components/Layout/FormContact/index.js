@@ -1,10 +1,12 @@
-import { memo, Fragment, useState, useEffect } from "react"
+import React, { memo, Fragment, useState, useEffect } from "react"
 import Anime from "react-anime"
 import { css } from "emotion"
 import Translate from "components/Translate"
 import Input from "./Input"
 import { useSendMail } from "services/formContact"
 import { MAIL_TARGET } from "utils/config"
+import { useInView } from 'react-intersection-observer'
+import { useSpring, animated } from 'react-spring'
 
 import styles from "./styles.local.css"
 
@@ -14,6 +16,11 @@ const FormContact = memo((props) => {
     name: "",
     mail: "",
     message: "",
+  })
+  const [ref, inView] = useInView({
+    /* Optional options */
+    threshold: 0,
+    triggerOnce: true,
   })
 
   const [submitDisabled, setSubmitDisabled] = useState(true)
@@ -60,11 +67,17 @@ const FormContact = memo((props) => {
 
   return (
     <Fragment>
-      <form
+      <animated.form
+        ref={ref}
         className="w-full sm:max-w-640 sm:mx-auto sm:px-20 md:px-0 "
         name="sendEmail"
         role="form"
         onSubmit={handleSubmit}
+        style={useSpring({
+          delay: 350,
+          transform: inView ? 'translateY(0)' : 'translateY(20px)',
+          opacity: inView ? 1 : 0,
+        })}
       >
         <fieldset className={`${styles.wrapper}`}>
           <legend className="text-blue text-20 sm:text-35 font-bold mb-35">
@@ -141,7 +154,7 @@ const FormContact = memo((props) => {
         >
           <Translate id="formContact.submit" />
         </button>
-      </form>
+      </animated.form>
     </Fragment>
   )
 })

@@ -1,4 +1,4 @@
-import { useState, memo, Fragment } from "react"
+import React, { useState, memo, Fragment } from "react"
 import { Translation as TranslationContext } from "store/Translation"
 import Container from "components/Container"
 import FormContact from "./FormContact"
@@ -7,9 +7,10 @@ import Footer from "./Footer"
 import SEOHead from "./SEOHead"
 import SelectLanguage from "./SelectLanguage"
 import SocialLinks from "./SocialLinks"
+import { withRouter } from 'next/router'
 
 const Layout = memo((props) => {
-  const { children, seo, locale } = props
+  const { children, seo, locale, router } = props
   const [translation, setLocale] = useState({ locale: props.locale, fallback: "en" })
   const availableLocales = {
     fr: "fr_FR",
@@ -33,7 +34,7 @@ const Layout = memo((props) => {
         socialmediaLocale={availableLocales[locale]}
       />
       <TranslationContext.Provider value={translation}>
-        <Header changeLang={setLocale} locale={locale} />
+        <Header router={router} changeLang={setLocale} locale={locale} />
         <main role="main" className="mt-100 flex-grow">
           <Container contained={true}>{children}</Container>
         </main>
@@ -43,7 +44,7 @@ const Layout = memo((props) => {
         <Container contained={true}>
           <div className="text-center sm:hidden">
             <SocialLinks />
-            <SelectLanguage onChange={setLocale} />
+            <SelectLanguage router={router} onChange={setLocale} />
           </div>
           <Footer />
         </Container>
@@ -52,4 +53,4 @@ const Layout = memo((props) => {
   )
 })
 
-export default Layout
+export default withRouter(Layout)

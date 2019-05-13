@@ -1,0 +1,42 @@
+/*! /* purgecss start ignore */
+.headingDecoration em {
+  @apply .text-violet;
+  @apply .underline;
+  @apply .roman;
+  @apply .font-bold;
+}
+
+.projectsGrid {
+  --rowWidth: 200px;
+  --colNumber: 1;
+  --gap: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(var(--colNumber), 1fr);
+  grid-auto-rows: minmax(auto, var(--rowWidth));
+  grid-gap: var(--gap);
+
+  @media(--screen-sm) {
+    --rowWidth: 170px;
+    --colNumber: 2;
+    --gap: 35px;
+  }
+
+  @media(--screen-md) {
+    --rowWidth: 170px;
+    --colNumber: 3;
+    --gap: 35px;
+  }
+}
+
+.subTitleDecoration::after {
+  @apply .w-80;
+  @apply .h-2;
+  @apply .absolute;
+  @apply .bg-blue;
+  content: "";
+  left: -6px;
+  bottom: -5px;
+}
+
+/*! /* purgecss end ignore */

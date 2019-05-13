@@ -1,4 +1,4 @@
-import { withRouter } from "next/router"
+import React from 'react'
 import Translate from "components/Translate"
 import Link from "./Link"
 import styles from "./styles.local.css"
@@ -7,8 +7,8 @@ import { t } from "utils/translation"
 const Navigation = (props) => {
   const { router } = props
   const locale = router.query.lang ? router.query.lang : "en"
-  const activeWorkLinkRegex = new RegExp('^\/((work)?)$')
-  const activeAboutLinkRegex = new RegExp('^\/about$')
+  const activeWorkLinkRegex = new RegExp("^/((work)?)$")
+  const activeAboutLinkRegex = new RegExp("^/about$")
 
   return (
     <nav role="navigation">
@@ -25,7 +25,13 @@ const Navigation = (props) => {
           </Link>
         </li>
         <li className="sm:mt-0 mr-20 sm:mr-30">
-          <Link active={activeWorkLinkRegex.test(router.pathname)} activeClassName={`${styles.active}`} as={`/${locale}#work`} href={`/?lang=${locale}#work`} passHref>
+          <Link
+            active={activeWorkLinkRegex.test(router.pathname)}
+            activeClassName={`${styles.active}`}
+            as={`/${locale}#work`}
+            href={`/?lang=${locale}#work`}
+            passHref
+          >
             <a>
               <Translate id="nav.work" />
             </a>
@@ -50,4 +56,4 @@ const Navigation = (props) => {
   )
 }
 
-export default withRouter(Navigation)
+export default Navigation

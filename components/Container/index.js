@@ -1,4 +1,4 @@
-import { memo } from "react"
+import React, { memo } from "react"
 import { ds } from "styles/tokens"
 import { pxTo } from "design-system-utils"
 import { css } from "emotion"

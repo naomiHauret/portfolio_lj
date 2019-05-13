@@ -35,7 +35,7 @@ class About extends PureComponent {
   _renderSection = (content, availablesLocales, locale, dataId, galleryId) => {
     return (
       <section className="mt-50 md:mt-70 flex flex-col md:flex-row">
-        <div className="w-full md:w-4/12 text-gray ">
+        <div className="w-full md:w-4/12 md:min-w-300 text-gray ">
           <h2
             className={`mb-20 md:mb-40 text-blue text-20 md:text-25 leading-32 font-bold relative ${
               styles.titleDecoration
@@ -43,14 +43,14 @@ class About extends PureComponent {
           >
             {content[`${dataId}-title-${availablesLocales[locale]}`]}
           </h2>
-          <div className="leading-23  text-15 md:text-base">
+          <div className="leading-23 text-15 md:text-base">
             {RichText.render(content[`${dataId}-paragraph-${availablesLocales[locale]}`], linkResolver)}
           </div>
         </div>
-        <ul className="list-reset flex-grow flex flex-wrap mt-10 md:mt-0">
+        <ul className={`list-reset flex-grow  md:ml-60 mt-10 md:mt-0 ${styles.gridGallery}`}>
           {content[`${dataId}-gallery`].map((picture, key) => (
             <li
-              className="w-full sm:w-2/12 md:w-2/12 flex my-30 md:my-0 mx-10 items-center justify-center flex-grow relative"
+              className="w-full flex my-30 md:my-0 items-center justify-center flex-grow relative"
               key={key}
             >
               {picture[`${galleryId}-logo`] !== undefined && (
@@ -95,12 +95,12 @@ class About extends PureComponent {
           <Fragment />
         ) : (
           <Fragment>
-            <div className="md:pl-150  mb-40 sm:mb-70">
+            <div className="md:pl-90 md:pr-60 mb-40 sm:mb-70">
               <section className="flex flex-col-reverse md:flex-row">
                 <div className="leading-23 text-15 md:text-base text-gray w-full md:w-6/12 pt-50">
                   {RichText.render(content[`about-paragraph-${availablesLocales[locale]}`], linkResolver)}
                 </div>
-                <div className="w-full md:w-4/12 md:ml-60 text-center md:text-left">
+                <div className="w-full md:w-4/12  md:ml-60 text-center md:text-left">
                   <img
                     alt=""
                     className="rounded-full overflow-hidden text-center md:text-left"

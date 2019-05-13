@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@emotion/core": "^10.0.10",
+    "@react-hook/window-scroll": "^1.0.0",
     "browserslist": "^4.5.5",
     "design-system-utils": "^1.5.0",
     "dotize": "^0.3.0",
@@ -14,10 +15,11 @@
     "prismic-javascript": "^2.0.3",
     "prismic-reactjs": "^0.3.2",
     "react": "^16.8.4",
-    "react-anime": "^2.2.0",
     "react-dom": "^16.8.4",
+    "react-intersection-observer": "^8.23.0",
     "react-medium-image-zoom": "^3.0.16",
     "react-select": "^2.4.3",
+    "react-spring": "^8.0.20",
     "sitemap": "^2.1.0"
   },
   "devDependencies": {
