@@ -29,7 +29,7 @@
 
 /* Custom fonts */
 @font-face {
-  font-display: auto;
+  font-display: swap;
   font-family: "Objectivity";
   font-style: normal;
   font-weight: 500;
@@ -37,7 +37,7 @@
 }
 
 @font-face {
-  font-display: auto;
+  font-display: swap;
   font-family: "Objectivity";
   font-style: normal;
   font-weight: bold;
@@ -45,7 +45,7 @@
 }
 
 @font-face {
-  font-display: auto;
+  font-display: swap;
   font-family: "Objectivity";
   font-style: normal;
   font-weight: 900;

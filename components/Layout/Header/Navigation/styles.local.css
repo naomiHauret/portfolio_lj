@@ -1,6 +1,6 @@
 /*! /* purgecss start ignore */
 .withDecoration::after {
-  content: "";
+  content: " ";
   width: 60px;
   height: 1px;
   top: 50%;

@@ -24,7 +24,7 @@
     },
     {
       "src": "/",
-      "dest": "/?lang=en",
+      "dest": "/?lang=fr",
       "headers": {
         "Cache-control": "s-maxage=1, stale-while-revalidate",
         "Accept-Encoding": "br"
@@ -35,7 +35,7 @@
       "status": 301,
       "headers": {
         "Location": "/?lang=$lang",
-        "Cache-control": "s-maxage=1, stale-while-revalidate",
+        "Cache-control": "max-age=31557600",
         "Accept-Encoding": "br"
       }
     },
@@ -44,7 +44,7 @@
       "status": 301,
       "headers": {
         "Location": "/about?lang=$lang",
-        "Cache-control": "s-maxage=1, stale-while-revalidate",
+        "Cache-control": "max-age=31557600",
         "Accept-Encoding": "br"
       }
     },
@@ -53,7 +53,7 @@
       "status": 301,
       "headers": {
         "Location": "/work?lang=$lang&slug=$slug",
-        "Cache-control": "s-maxage=1, stale-while-revalidate",
+        "Cache-control": "max-age=31557600",
         "Accept-Encoding": "br"
       }
     },

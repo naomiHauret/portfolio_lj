@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
   render() {
     const { isProduction } = this.props
     return (
-      <html lang="en">
+      <html lang="fr">
         <Head>
           <meta charSet="UTF-8" />
           <meta name="google-site-verification" content="ei5FqA2JEo-PM4QEbGyceut41bVwh2wTqY1pwxJvHWg" />

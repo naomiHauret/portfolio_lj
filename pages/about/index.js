@@ -74,7 +74,7 @@ class About extends PureComponent {
 
   render() {
     const { error, page, router } = this.props
-    const locale = router.query.lang ? router.query.lang : "en"
+    const locale = router.query.lang ? router.query.lang : "fr"
     const availablesLocales = {
       en: "en_US",
       fr: "fr_FR",
