@@ -6,7 +6,7 @@ import { t } from "utils/translation"
 
 const Navigation = (props) => {
   const { router } = props
-  const locale = router.query.lang ? router.query.lang : "en"
+  const locale = router.query.lang ? router.query.lang : "fr"
   const activeWorkLinkRegex = new RegExp("^/((work)?)$")
   const activeAboutLinkRegex = new RegExp("^/about$")
 

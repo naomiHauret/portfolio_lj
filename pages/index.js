@@ -59,7 +59,7 @@ class Home extends PureComponent {
 
   render() {
     const { error, router, home, projects } = this.props
-    const locale = router.query.lang ? router.query.lang : "en"
+    const locale = router.query.lang ? router.query.lang : "fr"
     const seo = {}
     let introductionParagraph
     let content

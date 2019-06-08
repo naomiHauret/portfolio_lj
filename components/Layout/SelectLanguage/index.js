@@ -57,7 +57,7 @@ class SelectLanguage extends PureComponent {
   render() {
     const { selectedOption } = this.state
     const { router } = this.props
-    const locale = router.query.lang ? router.query.lang : "en"
+    const locale = router.query.lang ? router.query.lang : "fr"
     const newLocale = locale === "en" ? "fr" : "en"
     let href
     let as

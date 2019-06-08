@@ -22,7 +22,7 @@ class Work extends PureComponent {
 
   render() {
     const { error, router, project } = this.props
-    const locale = router.query.lang ? router.query.lang : "en"
+    const locale = router.query.lang ? router.query.lang : "fr"
     const seo = {}
     let content
     let projectsData
