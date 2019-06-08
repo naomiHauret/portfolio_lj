@@ -17,12 +17,6 @@
   ],
   "routes": [
     {
-      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
-      "headers": {
-        "cache-control": "immutable"
-      }
-    },
-    {
       "src": "/",
       "dest": "/?lang=fr",
       "headers": {

@@ -34,7 +34,7 @@
   @apply .h-2;
   @apply .absolute;
   @apply .bg-blue;
-  content: "";
+  content: " ";
   left: -6px;
   bottom: -5px;
 }
