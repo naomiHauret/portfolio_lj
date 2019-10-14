@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react"
 import Translate from "components/Translate"
 import Link from "./Link"
 import styles from "./styles.local.css"
 import { t } from "utils/translation"
-import { DEFAULT_LANG } from 'utils/config'
+import { DEFAULT_LANG } from "utils/config"
 
 const Navigation = (props) => {
   const { router } = props

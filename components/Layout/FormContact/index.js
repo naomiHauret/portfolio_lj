@@ -4,8 +4,8 @@ import Translate from "components/Translate"
 import Input from "./Input"
 import { useSendMail } from "services/formContact"
 import { MAIL_TARGET } from "utils/config"
-import { useInView } from 'react-intersection-observer'
-import { useSpring, animated } from 'react-spring'
+import { useInView } from "react-intersection-observer"
+import { useSpring, animated } from "react-spring"
 
 import styles from "./styles.local.css"
 
@@ -74,7 +74,7 @@ const FormContact = memo((props) => {
         onSubmit={handleSubmit}
         style={useSpring({
           delay: 350,
-          transform: inView ? 'translateY(0)' : 'translateY(20px)',
+          transform: inView ? "translateY(0)" : "translateY(20px)",
           opacity: inView ? 1 : 0,
         })}
       >

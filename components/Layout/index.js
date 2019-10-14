@@ -7,7 +7,7 @@ import Footer from "./Footer"
 import SEOHead from "./SEOHead"
 import SelectLanguage from "./SelectLanguage"
 import SocialLinks from "./SocialLinks"
-import { withRouter } from 'next/router'
+import { withRouter } from "next/router"
 
 const Layout = memo((props) => {
   const { children, seo, locale, router } = props

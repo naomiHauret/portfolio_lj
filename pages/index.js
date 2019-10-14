@@ -10,10 +10,10 @@ import { ds } from "styles/tokens"
 import { pxTo } from "design-system-utils"
 import styles from "./home/styles.local.css"
 import { t } from "utils/translation"
-import ListProjects from './home/ListProjects'
-import Intro from './home/Intro'
-import HelloYou from './home/HelloYou'
-import { DEFAULT_LANG } from 'utils/config'
+import ListProjects from "./home/ListProjects"
+import Intro from "./home/Intro"
+import HelloYou from "./home/HelloYou"
+import { DEFAULT_LANG } from "utils/config"
 
 const baseFontSize = ds.get("type.sizes.baseFontSize")
 
@@ -65,7 +65,7 @@ class Home extends PureComponent {
     let introductionParagraph
     let content
     let projectsData
-    const workRegex = new RegExp('^\/(.*)#work$')
+    const workRegex = new RegExp("^/(.*)#work$")
     const availablesLocales = {
       en: "en_US",
       fr: "fr_FR",
@@ -83,12 +83,21 @@ class Home extends PureComponent {
           <Fragment />
         ) : (
           <Fragment>
-              <HelloYou appearBaseDelay={150} appearElementsDelay={2000} />
-              <Intro appearBaseDelay={1050} className={`${ styles.headingDecoration } leading-40 sm:leading-50 block max-w-600 mx-auto text-20 sm:text-35 font-500 text-center mb-50 sm:my-100`}>
-                {RichText.render(content[`introduction-paragraph-${availablesLocales[locale]}`], linkResolver)}
+            <HelloYou appearBaseDelay={150} appearElementsDelay={2000} />
+            <Intro
+              appearBaseDelay={1050}
+              className={`${styles.headingDecoration} leading-40 sm:leading-50 block max-w-600 mx-auto text-20 sm:text-35 font-500 text-center mb-50 sm:my-100`}
+            >
+              {RichText.render(content[`introduction-paragraph-${availablesLocales[locale]}`], linkResolver)}
             </Intro>
             <nav id="work">
-                <ListProjects startAnimNow={workRegex.test(router.asPath)} availablesLocales={availablesLocales} locale={locale} projects={projects} content={content}/>
+              <ListProjects
+                startAnimNow={workRegex.test(router.asPath)}
+                availablesLocales={availablesLocales}
+                locale={locale}
+                projects={projects}
+                content={content}
+              />
             </nav>
           </Fragment>
         )}
