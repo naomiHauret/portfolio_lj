@@ -4,3 +4,6 @@
 .cache
 node_modules
 README.md
+utils/config.dist.js
+.nvmrc
+.prettirerc
