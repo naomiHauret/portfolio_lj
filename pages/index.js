@@ -13,6 +13,7 @@ import { t } from "utils/translation"
 import ListProjects from './home/ListProjects'
 import Intro from './home/Intro'
 import HelloYou from './home/HelloYou'
+import { DEFAULT_LANG } from 'utils/config'
 
 const baseFontSize = ds.get("type.sizes.baseFontSize")
 
@@ -59,7 +60,7 @@ class Home extends PureComponent {
 
   render() {
     const { error, router, home, projects } = this.props
-    const locale = router.query.lang ? router.query.lang : "en"
+    const locale = router.query.lang ? router.query.lang : DEFAULT_LANG
     const seo = {}
     let introductionParagraph
     let content

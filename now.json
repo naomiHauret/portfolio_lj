@@ -24,7 +24,7 @@
     },
     {
       "src": "/",
-      "dest": "/?lang=en",
+      "dest": "/?lang=fr",
       "headers": {
         "Cache-control": "s-maxage=1, stale-while-revalidate",
         "Accept-Encoding": "br"

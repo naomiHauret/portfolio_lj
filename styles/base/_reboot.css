@@ -21,15 +21,7 @@
 }
 
 html {
-  @apply .text-px;
   scroll-behavior: smooth-scroll;
-}
-
-body {
-  @apply .flex;
-  @apply .flex-col;
-  @apply .min-h-screen;
-  @apply .m-0;
 }
 
 #__next {
@@ -39,11 +31,6 @@ body {
 }
 
 /* Reset */
-html,
-body {
-  @apply .overflow-x-hidden;
-  @apply .font-base;
-}
 
 fieldset,
 :--heading,

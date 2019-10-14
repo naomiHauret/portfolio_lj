@@ -24,10 +24,6 @@
   @apply .text-blue;
 }
 
-.active {
-  pointer-events: none;
-}
-
 .active span {
   @apply .font-900;
 }

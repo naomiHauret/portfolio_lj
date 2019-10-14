@@ -6,6 +6,7 @@ import { Client, linkResolver } from "utils/prismic"
 import { RichText } from "prismic-reactjs"
 import styles from "./styles.local.css"
 import { css } from "emotion"
+import { DEFAULT_LANG } from 'utils/config'
 
 class About extends PureComponent {
   static async getInitialProps({ req }) {
@@ -74,7 +75,7 @@ class About extends PureComponent {
 
   render() {
     const { error, page, router } = this.props
-    const locale = router.query.lang ? router.query.lang : "en"
+    const locale = router.query.lang ? router.query.lang : DEFAULT_LANG
     const availablesLocales = {
       en: "en_US",
       fr: "fr_FR",

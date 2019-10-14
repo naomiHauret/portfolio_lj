@@ -8,6 +8,7 @@ import Translate from "components/Translate"
 import { RichText } from "prismic-reactjs"
 import ImageZoom from "react-medium-image-zoom"
 import styles from "./styles.local.css"
+import { DEFAULT_LANG } from 'utils/config'
 
 class Work extends PureComponent {
   static async getInitialProps({ req, query }) {
@@ -22,7 +23,7 @@ class Work extends PureComponent {
 
   render() {
     const { error, router, project } = this.props
-    const locale = router.query.lang ? router.query.lang : "en"
+    const locale = router.query.lang ? router.query.lang : DEFAULT_LANG
     const seo = {}
     let content
     let projectsData

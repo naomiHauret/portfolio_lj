@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
   render() {
     const { isProduction } = this.props
     return (
-      <html lang="en">
+      <html lang="fr" className="text-px overflow-x-hidden">
         <Head>
           <meta charSet="UTF-8" />
           <meta name="google-site-verification" content="ei5FqA2JEo-PM4QEbGyceut41bVwh2wTqY1pwxJvHWg" />
@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
           <link crossOrigin="anonymous" rel="preload" href="/static/fonts/Objectivity-Bold.woff2" as="font" />
           <link crossOrigin="anonymous" rel="preload" href="/static/fonts/Objectivity-ExtraBold.woff2" as="font" />
         </Head>
-        <body>
+        <body className="flex flex-col min-h-screen m-0 overflow-x-hidden font-base">
           <Main />
           <NextScript />
           {isProduction && (
