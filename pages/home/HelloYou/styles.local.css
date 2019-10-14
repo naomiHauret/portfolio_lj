@@ -1,31 +1,48 @@
 .circleWrapper {
+
   left: 0;
+
   top: -70px;
+
 }
 
-
 .triangleWrapper {
+
   left: 30px;
+
   bottom: -30px;
+
 }
 
 .verticalLineWrapper {
+
   left: 185px;
+
   top: -58px;
+
 }
 
 .zigzagLineWrapper {
+
   left: 473px;
+
   top: -58px;
+
 }
 
 .horizontalLineWrapper {
+
   right: 0;
+
   top: -70px
+
 }
 
 .doubleTriangleWrapper {
+
   right: -12px;
+
   bottom: 18px;
+
 }
 
