@@ -1,0 +1,6 @@
+/*! /* purgecss start ignore */
+    .buttonLink:any-link {
+        @apply .text-blue;
+    }
+
+/*! /* purgecss end ignore */

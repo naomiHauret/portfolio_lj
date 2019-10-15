@@ -1,5 +1,4 @@
-import React, { useRef, useCallback, Fragment, memo } from "react"
-import styles from "./styles.local.css"
+import React, { memo } from "react"
 import { useSpring, animated } from "react-spring"
 import { css } from "emotion"
 import { mq } from "styles/tokens/helper"

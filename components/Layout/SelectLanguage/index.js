@@ -5,6 +5,7 @@ import { ds } from "styles/tokens"
 import Router from "next/router"
 import Link from "components/Layout/Header/Navigation/Link"
 import Translate from "components/Translate"
+import { DEFAULT_LANG } from "utils/config"
 
 const baseFontSize = ds.get("type.sizes.baseFontSize")
 const options = {
@@ -14,14 +15,14 @@ const options = {
 
 class SelectLanguage extends PureComponent {
   state = {
-    selectedOption: options[this.props.router.query.lang ? this.props.router.query.lang : "en"],
+    selectedOption: options[this.props.router.query.lang ? this.props.router.query.lang : DEFAULT_LANG],
   }
 
   _handleChange = (selectedOption) => {
     const { onChange, router } = this.props
     const newLocale = selectedOption.value
     this.setState({ selectedOption })
-    onChange({ locale: newLocale, fallback: "en" })
+    onChange({ locale: newLocale, fallback: DEFAULT_LANG })
     let href
     let as
     switch (router.route) {
@@ -57,7 +58,7 @@ class SelectLanguage extends PureComponent {
   render() {
     const { selectedOption } = this.state
     const { router } = this.props
-    const locale = router.query.lang ? router.query.lang : "en"
+    const locale = router.query.lang ? router.query.lang : DEFAULT_LANG
     const newLocale = locale === "en" ? "fr" : "en"
     let href
     let as

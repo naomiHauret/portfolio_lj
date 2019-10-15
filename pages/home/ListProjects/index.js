@@ -1,5 +1,5 @@
-import React, { useRef, useCallback, Fragment, memo } from "react"
-import { useSpring, useTransition, animated } from "react-spring"
+import React, { memo } from "react"
+import { useSpring, animated } from "react-spring"
 import { css } from "emotion"
 import Link from "next/link"
 import { Client, Prismic, linkResolver } from "utils/prismic"

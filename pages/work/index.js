@@ -1,7 +1,6 @@
-import { Fragment, PureComponent } from "react"
+import { PureComponent } from "react"
 import { withRouter } from "next/router"
-import Link from "next/link"
-import { Client, Prismic, linkResolver } from "utils/prismic"
+import { Client } from "utils/prismic"
 import Layout from "components/Layout"
 import { css } from "emotion"
 import Translate from "components/Translate"
@@ -9,6 +8,7 @@ import { RichText } from "prismic-reactjs"
 import ImageZoom from "react-medium-image-zoom"
 import styles from "./styles.local.css"
 import { DEFAULT_LANG } from "utils/config"
+import ViewerPDF from "components/ViewerPDF"
 
 class Work extends PureComponent {
   static async getInitialProps({ req, query }) {
@@ -37,7 +37,7 @@ class Work extends PureComponent {
       })
     }
 
-    if (this.props.error) return <Layout locale={locale}>Error</Layout>
+    if (error) return <Layout locale={locale}>Error</Layout>
     else {
       return (
         <Layout locale={locale} seo={seo}>
@@ -68,7 +68,6 @@ class Work extends PureComponent {
             </div>
             <div className="leading-23">
               {content[`body-${availablesLocales[locale]}`].map((slice, index) => {
-                console.log(slice)
                 if (slice.slice_type === "text") {
                   return (
                     <div className={`mt-30 font-500 text-gray ${styles.wrapper}`} key={index}>
@@ -100,14 +99,22 @@ class Work extends PureComponent {
                       </figcaption>
                     </figure>
                   )
-                 
-                } 
-                else if (slice.slice_type === "embed") {
+                } else if (slice.slice_type === "embed") {
                   return (
-                    <div className={styles.iframeWrapper} dangerouslySetInnerHTML={{ __html: slice.primary.embed[0].text }} />
+                    <div
+                      key={index}
+                      className={`${styles.iframeWrapper} mt-30 mb-20`}
+                      dangerouslySetInnerHTML={{ __html: slice.primary.embed[0].text }}
+                    />
+                  )
+                } else if (slice.slice_type === "pdf") {
+                  return (
+                    <div key={index} className="mt-30 mb-20">
+                      <ViewerPDF src={slice.primary.link.url} />
+                    </div>
                   )
                 }
-                 // Return null by default
+                // Return null by default
                 else {
                   return null
                 }

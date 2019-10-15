@@ -261,6 +261,11 @@ module.exports = {
 
   minHeight: {
     0: "0",
+    400: pxTo(400, baseFontSize, "rem"),
+    500: pxTo(500, baseFontSize, "rem"),
+    "60vh": "60vh",
+    "65vh": "65vh",
+    "70vh": "70vh",
     full: "100%",
     screen: "100vh",
   },

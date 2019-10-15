@@ -18,6 +18,7 @@
     "react-dom": "^16.10.2",
     "react-intersection-observer": "^8.23.0",
     "react-medium-image-zoom": "^3.1.2",
+    "react-responsive": "^8.0.1",
     "react-select": "^2.4.3",
     "react-spring": "^8.0.27",
     "sitemap": "^5.0.0"

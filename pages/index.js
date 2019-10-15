@@ -1,21 +1,14 @@
 import { Fragment, PureComponent } from "react"
 import { withRouter } from "next/router"
-import Link from "next/link"
 import { Client, Prismic, linkResolver } from "utils/prismic"
 import Layout from "components/Layout"
 import { RichText } from "prismic-reactjs"
-import Translate from "components/Translate"
-import { css } from "emotion"
 import { ds } from "styles/tokens"
-import { pxTo } from "design-system-utils"
 import styles from "./home/styles.local.css"
-import { t } from "utils/translation"
 import ListProjects from "./home/ListProjects"
 import Intro from "./home/Intro"
 import HelloYou from "./home/HelloYou"
 import { DEFAULT_LANG } from "utils/config"
-
-const baseFontSize = ds.get("type.sizes.baseFontSize")
 
 class Home extends PureComponent {
   static async getInitialProps({ req }) {

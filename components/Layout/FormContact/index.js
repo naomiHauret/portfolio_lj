@@ -6,7 +6,7 @@ import { useSendMail } from "services/formContact"
 import { MAIL_TARGET } from "utils/config"
 import { useInView } from "react-intersection-observer"
 import { useSpring, animated } from "react-spring"
-
+import Button from "components/Button"
 import styles from "./styles.local.css"
 
 const FormContact = memo((props) => {
@@ -144,15 +144,13 @@ const FormContact = memo((props) => {
         <input type="hidden" name="*reply" value="email" />
         <input type="hidden" name="*subject" value="Lucas, un nouveau mail envoyé depuis ton site !" />
         <input type="hidden" name="*honeypot" />
-        <button
-          className={`${
-            submitDisabled === true ? "opacity-50" : "opacity-100"
-          } font-bold rounded-full text-blue border-blue border-2 border-solid px-20 py-10 mb-50 sm:mb-80 block mx-auto`}
+        <Button
+          additionalStyles={`${submitDisabled === true ? "opacity-50" : "opacity-100"} mb-50 sm:mb-80 mx-auto`}
           type="submit"
           disabled={submitDisabled}
         >
           <Translate id="formContact.submit" />
-        </button>
+        </Button>
       </animated.form>
     </Fragment>
   )

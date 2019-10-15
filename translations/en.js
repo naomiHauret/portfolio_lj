@@ -43,6 +43,7 @@ export default {
       goToProject: "Go to project %name%",
     },
     work: {
+      openPDF: "Open PDF",
       projectDuration: '<span class="font-bold">Project duration:</span> %duration%',
       projectType: {
         personal: "Personal project",
