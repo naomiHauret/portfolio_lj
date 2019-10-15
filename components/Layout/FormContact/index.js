@@ -1,5 +1,4 @@
 import React, { memo, Fragment, useState, useEffect } from "react"
-import { css } from "emotion"
 import Translate from "components/Translate"
 import Input from "./Input"
 import { useSendMail } from "services/formContact"
@@ -17,7 +16,6 @@ const FormContact = memo((props) => {
     message: "",
   })
   const [ref, inView] = useInView({
-    /* Optional options */
     threshold: 0,
     triggerOnce: true,
   })
