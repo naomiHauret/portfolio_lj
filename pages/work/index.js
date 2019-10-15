@@ -26,7 +26,6 @@ class Work extends PureComponent {
     const locale = router.query.lang ? router.query.lang : DEFAULT_LANG
     const seo = {}
     let content
-    let projectsData
     const availablesLocales = {
       en: "en_US",
       fr: "fr_FR",
@@ -69,6 +68,7 @@ class Work extends PureComponent {
             </div>
             <div className="leading-23">
               {content[`body-${availablesLocales[locale]}`].map((slice, index) => {
+                console.log(slice)
                 if (slice.slice_type === "text") {
                   return (
                     <div className={`mt-30 font-500 text-gray ${styles.wrapper}`} key={index}>
@@ -100,8 +100,15 @@ class Work extends PureComponent {
                       </figcaption>
                     </figure>
                   )
-                  // Return null by default
-                } else {
+                 
+                } 
+                else if (slice.slice_type === "embed") {
+                  return (
+                    <div className={styles.iframeWrapper} dangerouslySetInnerHTML={{ __html: slice.primary.embed[0].text }} />
+                  )
+                }
+                 // Return null by default
+                else {
                   return null
                 }
               })}
