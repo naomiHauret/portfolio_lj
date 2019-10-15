@@ -19,4 +19,9 @@
   @apply .pin-t;
   @apply .pin-l;
 }
+
+.iframeWrapper iframe {
+  @apply .w-full;
+}
+
 /*! /* purgecss end ignore */
