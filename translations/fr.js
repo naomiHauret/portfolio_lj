@@ -7,6 +7,10 @@ export default {
       message: "j'aimerais parler de",
     },
     submit: "Envoyer",
+    success: "Message bien envoyé !",
+    pending: "Envoi du message en cours...",
+    error: "Erreur lors de l'envoi du message, veuillez réessayer."
+
   },
   socials: {
     goTo: "Voir mon %label%",

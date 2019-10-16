@@ -1,12 +1,13 @@
-import React, { memo, Fragment, useState, useEffect } from "react"
+import React, { memo, Fragment, useState, useEffect, useReducer, createContext, useContext } from "react"
 import Translate from "components/Translate"
 import Input from "./Input"
-import { useSendMail } from "services/formContact"
 import { MAIL_TARGET } from "utils/config"
 import { useInView } from "react-intersection-observer"
 import { useSpring, animated } from "react-spring"
 import Button from "components/Button"
 import styles from "./styles.local.css"
+import { MAILER_KEY } from "utils/config"
+import {useApiRequest, PENDING, SUCCESS, ERROR} from "./hooks"
 
 const FormContact = memo((props) => {
   // Initial state
@@ -15,27 +16,35 @@ const FormContact = memo((props) => {
     mail: "",
     message: "",
   })
+  const [submitDisabled, setSubmitDisabled] = useState(true)
   const [ref, inView] = useInView({
     threshold: 0,
     triggerOnce: true,
   })
 
-  const [submitDisabled, setSubmitDisabled] = useState(true)
+  const [{ status, response }, makeRequest] = useApiRequest(
+    `https://www.enformed.io/${MAILER_KEY}`,
+    {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          sender: formData.name.trim(),
+          email: formData.mail.trim(),
+          message: formData.message.trim(),
+          "*reply": "email",
+          "*subject": "Nouveau mail",
+          "*default_email": MAIL_TARGET,
+        }),
+    }
+  )
 
-  // sendMailQuery is an object that holds our query status (success, failure, pending)
-  // sendMail calls useSendMail hook for us
-  const [query, sendMail] = useSendMail()
 
   // componentDidUpdate
-  // Empty form fields when mail is sent
   useEffect(() => {
-    if (query.success === true) {
-      setFormData({
-        name: "",
-        mail: "",
-        message: "",
-      })
-    }
+
     if (
       document.forms["sendEmail"].elements["*honeypot"].value === "" &&
       document.forms["sendEmail"].checkValidity() &&
@@ -48,20 +57,22 @@ const FormContact = memo((props) => {
       setSubmitDisabled(true)
     }
   })
-
-  // handle form submit
-  function handleSubmit(e) {
-    e.preventDefault()
-    sendMail({
-      sender: formData.name.trim(),
-      email: formData.mail.trim(),
-      message: formData.message.trim(),
-      "*reply": "email",
-      "*subject": "Nouveau mail",
-      "*default_email": MAIL_TARGET,
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()  
+    makeRequest()
+    setFormData({
+      name: "",
+      mail: "",
+      message: "",  
     })
+    return
   }
-
+  
+  const buttonLabel =  ( formData.name.trim() !== "" ||
+  formData.mail.trim() !== "" ||
+  formData.message.trim() !== "") ? "submit" : status === PENDING ? "pending" : status === SUCCESS ? "success" : status === ERROR ? "error" : "submit"
+  console.log(buttonLabel)
   return (
     <Fragment>
       <animated.form
@@ -147,7 +158,8 @@ const FormContact = memo((props) => {
           type="submit"
           disabled={submitDisabled}
         >
-          <Translate id="formContact.submit" />
+          
+          <Translate id={`formContact.${buttonLabel}`} />
         </Button>
       </animated.form>
     </Fragment>
