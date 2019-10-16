@@ -8,7 +8,7 @@ import { mq } from "styles/tokens/helper"
 const baseFontSize = ds.get("type.sizes.baseFontSize")
 const themeSystem = {
   display: {
-    input: "inline-flex flex-row items-center",
+    input: "inline-flex flex-col w-full sm:flex-row sm:items-center",
     textarea: "flex flex-col",
   },
 }
@@ -29,7 +29,7 @@ const Input = (props) => {
       >
         {label}
         <div
-          className={`relative overflow-hidden ${tagType === "textarea" ? "" : "w-6/12"} ${styles.wrapper}`.concat(
+          className={`relative ${tagType === "textarea" ? "" : "w-6/12"} ${styles.wrapper}`.concat(
             " ",
             css({
               marginLeft: tagType === "input" ? "0.5ch" : 0,

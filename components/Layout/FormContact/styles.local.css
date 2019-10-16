@@ -3,10 +3,27 @@
   all: unset;
   @apply .block;
   @apply .text-center;
+}
+
+.wrapperHidden {
   @apply .overflow-hidden;
+}
+
+.wrapperVisible {
+  @apply .overflow-visible;
 }
 
 .wrapper span {
   -webkit-text-fill-color: currentColor !important; /* Safari fix */
 }
+
+.form:focus-within label div {
+  @apply .overflow-hidden;
+}
+
+.form label div {
+  @apply .overflow-visible;
+}
+
+
 /*! /* purgecss end ignore */

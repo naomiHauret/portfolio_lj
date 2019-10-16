@@ -72,12 +72,11 @@ const FormContact = memo((props) => {
   const buttonLabel =  ( formData.name.trim() !== "" ||
   formData.mail.trim() !== "" ||
   formData.message.trim() !== "") ? "submit" : status === PENDING ? "pending" : status === SUCCESS ? "success" : status === ERROR ? "error" : "submit"
-  console.log(buttonLabel)
   return (
     <Fragment>
       <animated.form
         ref={ref}
-        className="w-full sm:max-w-640 sm:mx-auto sm:px-20 md:px-0 "
+        className={`w-full sm:max-w-640 sm:mx-auto sm:px-20 md:px-0 ${styles.form}` }
         name="sendEmail"
         role="form"
         onSubmit={handleSubmit}
@@ -87,7 +86,7 @@ const FormContact = memo((props) => {
           opacity: inView ? 1 : 0,
         })}
       >
-        <fieldset className={`${styles.wrapper}`}>
+        <fieldset className={`${styles.wrapper} ${(formData.mail !== "") ? styles.wrapperVisible : styles.wrapperHidden}`}>
           <legend className="text-blue text-20 sm:text-35 font-bold mb-35">
             <Translate id="formContact.legend" />
           </legend>
