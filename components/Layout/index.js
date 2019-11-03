@@ -38,9 +38,9 @@ const Layout = memo((props) => {
         <main role="main" className="mt-100 flex-grow">
           <Container contained={true}>{children}</Container>
         </main>
-        <div className="w-full px-20 md:px-3/12 mt-30 sm:mt-75">
+        <Container contained={true} staticStyles="md:px-1/12 mt-30 sm:mt-75">
           <FormContact />
-        </div>
+        </Container>
         <Container contained={true}>
           <div className="text-center sm:hidden">
             <SocialLinks />

@@ -76,7 +76,7 @@ const FormContact = memo((props) => {
     <Fragment>
       <animated.form
         ref={ref}
-        className={`w-full sm:max-w-640 sm:mx-auto sm:px-20 md:px-0 ${styles.form}` }
+        className={styles.form}
         name="sendEmail"
         role="form"
         onSubmit={handleSubmit}

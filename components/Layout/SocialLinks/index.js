@@ -77,7 +77,17 @@ const SocialLinks = memo((props) => {
                   backgroundColor: ds.get("colors.blue"),
                   transition: "all 250ms ease-in-out",
                 },
-              }),
+                "@media not all and (min-resolution:.001dpcm)": { 
+                  "@media": {
+                      backgroundColor: "transparent",
+                      "&:hover": {
+                        backgroundColor: ds.get("colors.blue"),
+                      },
+                      "&::after": {
+                        display: "none",
+                      },
+                  }
+              }}),
             )}
             href={e.link}
           >

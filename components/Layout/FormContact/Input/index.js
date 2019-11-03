@@ -29,7 +29,7 @@ const Input = (props) => {
       >
         {label}
         <div
-          className={`relative ${tagType === "textarea" ? "" : "w-6/12"} ${styles.wrapper}`.concat(
+          className={`relative ${tagType === "textarea" ? "" : "md:w-6/12 flex-grow"} ${styles.wrapper}`.concat(
             " ",
             css({
               marginLeft: tagType === "input" ? "0.5ch" : 0,
