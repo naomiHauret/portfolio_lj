@@ -1,13 +1,14 @@
-import React, { memo, Fragment, useState, useEffect, useReducer, createContext, useContext } from "react"
+import React, { memo, Fragment, useState, useEffect, createRef } from "react"
 import Translate from "components/Translate"
 import Input from "./Input"
-import { MAIL_TARGET } from "utils/config"
+import { MAIL_TARGET, CAPTCHA_KEY_WEBSITE } from "utils/config"
 import { useInView } from "react-intersection-observer"
 import { useSpring, animated } from "react-spring"
 import Button from "components/Button"
 import styles from "./styles.local.css"
 import { MAILER_KEY } from "utils/config"
 import {useApiRequest, PENDING, SUCCESS, ERROR} from "./hooks"
+import ReCAPTCHA from "react-google-recaptcha"
 
 const FormContact = memo((props) => {
   // Initial state
@@ -17,6 +18,7 @@ const FormContact = memo((props) => {
     message: "",
   })
   const [submitDisabled, setSubmitDisabled] = useState(true)
+  const recaptchaRef = createRef()
   const [ref, inView] = useInView({
     threshold: 0,
     triggerOnce: true,
@@ -46,7 +48,10 @@ const FormContact = memo((props) => {
   useEffect(() => {
 
     if (
+      recaptchaRef.current.getValue() !== "" &&
       document.forms["sendEmail"].elements["*honeypot"].value === "" &&
+      document.forms["sendEmail"].elements["*nutellajar"].value === "" &&
+      document.forms["sendEmail"].elements["jamjar"].value === "" &&
       document.forms["sendEmail"].checkValidity() &&
       formData.name.trim() !== "" &&
       formData.mail.trim() !== "" &&
@@ -131,7 +136,7 @@ const FormContact = memo((props) => {
               pattern="[^@\s]+@[^@\s]+"
             />
           </div>
-          <div className="mb-30 sm:mb-60">
+          <div className="mb-60 md:mb-40">
             <Input
               handleChange={(e) =>
                 setFormData({
@@ -152,8 +157,16 @@ const FormContact = memo((props) => {
         <input type="hidden" name="*reply" value="email" />
         <input type="hidden" name="*subject" value="Lucas, un nouveau mail envoyé depuis ton site !" />
         <input type="hidden" name="*honeypot" />
+        <input type="hidden" name="*nutellajar" />
+        <input type="hidden" name="jamjar" />
+
+        <ReCAPTCHA
+            style={{ display: "flex", justifyContent: 'center' }}
+            ref={recaptchaRef}
+            sitekey={CAPTCHA_KEY_WEBSITE}
+          />
         <Button
-          additionalStyles={`${submitDisabled === true ? "opacity-50" : "opacity-100"} mb-50 sm:mb-80 mx-auto`}
+          additionalStyles={`${submitDisabled === true ? "opacity-50" : "opacity-100"} mt-30 sm:mt-60 mb-50 sm:mb-80 mx-auto`}
           type="submit"
           disabled={submitDisabled}
         >

@@ -16,6 +16,7 @@
     "prismic-reactjs": "^0.3.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-google-recaptcha": "^2.0.1",
     "react-intersection-observer": "^8.23.0",
     "react-medium-image-zoom": "^3.1.2",
     "react-responsive": "^8.0.1",
