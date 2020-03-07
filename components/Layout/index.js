@@ -24,6 +24,12 @@ const Layout = memo((props) => {
   const socialmediaDescription = Object.keys(seo).filter(
     (key) => key.includes(`socialmedia-description-${locale}_`) === true && seo[key],
   )
+  const socialmediaPreview = {
+    url: seo['socialmedia-preview'].url,
+    width:  seo['socialmedia-preview'].dimensions.width,
+    height:  seo['socialmedia-preview'].dimensions.height,
+  }
+
   return (
     <Fragment>
       <SEOHead
@@ -32,6 +38,7 @@ const Layout = memo((props) => {
         socialmediaTitle={seo[socialmediaTitle]}
         socialmediaDescription={seo[socialmediaDescription]}
         socialmediaLocale={availableLocales[locale]}
+        socialmediaPreview={socialmediaPreview}
       />
       <TranslationContext.Provider value={translation}>
         <Header router={router} changeLang={setLocale} locale={locale} />
