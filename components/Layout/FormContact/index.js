@@ -156,9 +156,9 @@ const FormContact = memo((props) => {
         </fieldset>
         <input type="hidden" name="*reply" value="email" />
         <input type="hidden" name="*subject" value="Lucas, un nouveau mail envoyé depuis ton site !" />
-        <input type="hidden" name="*honeypot" />
-        <input type="hidden" name="*nutellajar" />
-        <input type="hidden" name="jamjar" />
+        <input  aria-hidden="true" className="hidden" name="*honeypot" />
+        <input  aria-hidden="true" className="hidden" name="*nutellajar" />
+        <input  aria-hidden="true" className="hidden" name="jamjar" />
 
         <ReCAPTCHA
             style={{ display: "flex", justifyContent: 'center' }}
