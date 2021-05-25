@@ -6,7 +6,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.21",
     "@react-hook/window-scroll": "^1.0.0",
-    "browserslist": "^4.7.0",
+    "browserslist": "^4.16.5",
     "design-system-utils": "^1.5.0",
     "dotize": "^0.3.0",
     "emotion": "^10.0.17",
