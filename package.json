@@ -10,7 +10,7 @@
     "design-system-utils": "^1.5.0",
     "dotize": "^0.3.0",
     "emotion": "^10.0.17",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "next": "^8.0.3",
     "prismic-javascript": "^2.0.3",
     "prismic-reactjs": "^0.3.2",
