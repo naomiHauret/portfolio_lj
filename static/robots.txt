@@ -7,8 +7,7 @@ Allow: /fr
 Allow: /en
 Allow: /fr/about
 Allow: /en/about
-Allow: /en/work/*
-Allow: /fr/work/*
-Disallow: /work
+Allow: /en/work/
+Allow: /fr/work/
 
 Sitemap: https://lucasjouin.com/sitemap.xml
