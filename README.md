@@ -2,11 +2,13 @@
 <img src="https://i.imgur.com/AjFbq6F.png" />
 </p>
 <p align="center">
-  Source code of Lucas Jouin's portfolio
+  V1 source code of Lucas Jouin's portfolio
 </p>
 
 - [Website](https://lucasjouin.com)
-- [CSS stats](https://cssstats.com/stats?url=https%3A%2F%2Flucasjouin.com&ua=Browser%20Default)
+ 
+**Update:** This website has been completely overhauled in 2023. It now uses Astro v3 (meta framework), HTMX (front-end/back-end interactions), motion-one (animations), Formspree (forms) and Netlify (deployment). TailwindCSS and Prismic are still in use though.
+
 
 ## Pre-requisites
 * Have `node` and `npm` installed on your computer.
